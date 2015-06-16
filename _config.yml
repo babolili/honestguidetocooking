@@ -1,9 +1,9 @@
 # Site settings
-title:       "Linnea Strid Portfolio"
+title:       "The Honest Guide to Cooking"
 email:       "stridlinnea@gmail.com"
 author:      "Linnea Strid"
-description: "The portfolio of Linnea Strid - UX and Frontend designer"
-url:         "http://linneastrid.com"
+description: "The Honest Guide to Cooking - a somewhat comprehensive guide to the ingredients, equipment and technique needed to make food."
+url:         "http://honestguidetocooking.com"
 
 # Authors
 authors:
@@ -41,6 +41,21 @@ bitcoin_url:
 paypal_url:
 flattr_button:
 
+#Assets
+
+assets:
+  dirname: assets
+  baseurl: /assets/
+  sources:
+    - _assets/webfonts
+    - _assets/javascripts
+    - _assets/stylesheets
+    - _assets/images
+  css_compressor: sass
+  cachebust: none
+  cache: false
+  debug: false
+
 # Build settings
 markdown:     redcarpet
 redcarpet:
@@ -50,3 +65,13 @@ paginate:     10
 sass:
   compressed: true
 
+#rake boilerplate 
+post:
+  template: _post.txt
+  extension: md
+page:
+  template: _page.txt
+  extension: md
+editor: gvim
+git:
+  branch: master

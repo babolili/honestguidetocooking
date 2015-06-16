@@ -1,0 +1,28 @@
+header {
+	background: $hg-pink;
+	padding: $padding-s;
+	.mobile-nav-button {
+		display: none;
+	}
+	.nav-links {
+		float: right;
+		li {
+			display: inline-block;
+			vertical-align: middle;
+			
+			a {
+				font-size: rem(18px);
+				color: white;
+			}
+			ul {
+				display: none;
+				li {
+					display: block;
+				}
+			}
+		}
+	}
+	.social-row {
+		float: right;
+	}
+}

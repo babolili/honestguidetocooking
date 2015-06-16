@@ -1,6 +1,6 @@
 @mixin button($color, $background-color, $border-color, $hover-color) {
 	@include appearance(none);
-	@include font($sans,rem(18px),$semibold,$color);
+	@include font($header,rem(18px),$semibold,$color);
 	padding: $padding-base $padding-l;
 	display: inline-block;
 	border: 2px solid $border-color;

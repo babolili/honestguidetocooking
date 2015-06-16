@@ -24,3 +24,8 @@ $ ->
 	$(document).on 'click', '.nav-button', (e) ->
 		$(this).toggleClass 'show'
 		$('.bubble-nav').toggleClass 'show'
+		
+	SimpleJekyllSearch
+	  searchInput: document.getElementById('search-input')
+	  resultsContainer: document.getElementById('results-container')
+	  json: '/search.json'
