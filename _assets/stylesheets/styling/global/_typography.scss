@@ -21,10 +21,11 @@ $font-black: 900;
 
 $best-sans-fonts: 'helvetica neue', 'helvetica', 'Arial', sans-serif;
 $best-serif-fonts: 'Georgia', 'Palatino Linotype', 'Book Antiqua', serif;
+$icon-font: 'fontawesome';
 
 $body: 'bariol-regular', $best-sans-fonts;
-$body-italic: 'bariolitalic', $best-sans-fonts;
-$body-emphasis: 'bariolbolditalic', $best-sans-fonts;
+$body-italic: 'bariol-italic', $best-sans-fonts;
+$body-emphasis: 'bariol-bold-italic', $best-sans-fonts;
 $script: 'bdroen', cursive;
 $header: 'intro', $best-serif-fonts;
 

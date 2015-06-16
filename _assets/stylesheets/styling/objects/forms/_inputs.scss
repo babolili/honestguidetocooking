@@ -35,10 +35,8 @@ textarea,
   background-color: white;
   border-radius: $form-border-radius;
   border: 1px solid $form-border-color;
-  box-shadow: $form-box-shadow;
   font-family: $form-font-family;
   font-size: $form-font-size;
-  margin-bottom: $padding-base / 2;
   padding: $padding-base/4 ;
   height: $input-base-height;
 
@@ -55,7 +53,8 @@ textarea,
 input[type="text"] {
   @include appearance(none);
   height: $input-base-height;
-  padding: 7px;
+  line-height: $input-base-height;
+  padding: 7px 0px;
 }
 input[type="search"] {
   @include appearance(none);

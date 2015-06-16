@@ -1,20 +1,33 @@
 header {
 	background: $hg-pink;
-	padding: $padding-s;
 	.mobile-nav-button {
 		display: none;
 	}
-	.nav-links {
+	.nav-wrapper {
 		float: right;
+		> div {
+			display: inline-block;
+		}
+	}
+	.nav-links {
 		li {
 			display: inline-block;
 			vertical-align: middle;
-			
 			a {
-				font-size: rem(18px);
+				font-size: rem(16px);
+				display: block;
+				height: $input-base-height + $padding-s;
+				padding: 0 $padding-base;
+				border-right: 1px solid darken($hg-pink, 5%);
+				line-height: $input-base-height + $padding-s;
 				color: white;
+				font-weight: $heavy;
+				text-transform: uppercase;
 			}
-			ul {
+			i.fa {
+				padding-left: $padding-xs;
+			}
+			.subnav {
 				display: none;
 				li {
 					display: block;
@@ -22,7 +35,68 @@ header {
 			}
 		}
 	}
+	#search-container {
+		position: relative;
+		padding: $padding-xs 0;
+		input {
+			padding-left: $padding-xl;
+			background: rgba(255,255,255,0.8);
+			border: 1px solid darken($hg-pink, 5%);
+			@include placeholder {
+				font-family: $body-italic;
+				font-size: rem(14px);
+			}
+			&:focus {
+			  border: 1px solid darken($hg-pink, 10%);
+			  box-shadow: 0 0 5px rgba(darken($hg-pink, 10%), 0.7);;
+			  outline: none;
+			}
+		}
+		&:before {
+			content: $fa-var-search;
+			display: block;
+			position: absolute;
+			font-family: $icon-font;
+			height: $input-base-height;
+			line-height: $input-base-height;
+			padding-left: $padding-s;
+			color: $hg-pink;
+		}
+		#results-container {
+			position: absolute;
+			left: 0px;
+			right: 0px;
+			bottom: 0px;
+			@include transform(translateY(90%));
+			z-index: 2;
+			background: white;
+
+			li {
+				display: block;
+				border-left: 1px solid darken($hg-pink, 5%);
+				border-right: 1px solid darken($hg-pink, 5%);
+				a {
+					display: block;
+					padding: $padding-s;
+					color: $text-body-color;
+					&:hover {
+						background: lighten($hg-pink, 15%);
+						color: darken($hg-pink, 5%);
+					}
+				}
+				&:last-child {
+					border-radius: 0px 0px $border-base-radius $border-base-radius;
+					border-bottom: 1px solid darken($hg-pink, 5%);
+				}
+			}
+			li + li {
+				border-top: 1px solid lighten($hg-pink,12%);
+			}
+		}
+	}
 	.social-row {
-		float: right;
+		a {
+			color: white;
+		}
 	}
 }
