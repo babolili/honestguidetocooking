@@ -1,0 +1,29 @@
+.home {
+	.feature-row {
+		@include clearfix;
+		clear: both;
+		@include display(flex);
+		@include flex-flow(wrap);
+		
+		> div {
+			@include display(flex);
+			&:first-child {
+				margin-left: -1px !important;
+			}
+		}
+		.big-feature {
+			@include color-block-gradient($magenta);
+			@include col(8,0,$tablet,12,0);
+			padding: $padding-l;
+			position: relative;
+			img {
+				padding: $padding-xl;
+			}
+		}
+		.smaller-feature {
+			@include color-block-gradient($hg-pink);
+			@include col(4,0,$tablet,12,0);
+			padding: $padding-l;
+		}
+	}
+}

@@ -1,5 +1,16 @@
 header {
-	background: $hg-pink;
+	background: $background;
+	position: fixed;
+	left: 0px;
+	right: 0px;
+	top: 0px;
+	@include clearfix;
+	clear: both;
+	z-index: 9;
+	box-shadow: 0px 0px 6px 0px rgba($black,0.75);
+	@include media($tablet) {
+		position: absolute;
+	}
 	.mobile-nav-button {
 		display: none;
 	}
@@ -13,25 +24,109 @@ header {
 		li {
 			display: inline-block;
 			vertical-align: middle;
+			position: relative;
 			a {
-				font-size: rem(16px);
+				font-size: rem(18px);
 				display: block;
 				height: $input-base-height + $padding-s;
 				padding: 0 $padding-base;
-				border-right: 1px solid darken($hg-pink, 5%);
+				border-right: 1px solid lighten($hg-pink, 15%);
 				line-height: $input-base-height + $padding-s;
-				color: white;
+				color: darken($hg-pink, 5%);
 				font-weight: $heavy;
 				text-transform: uppercase;
+				@include transition(background  0.2s ease-in-out);
+				&:hover {
+					background-color: lighten($hg-pink, 20%);
+				}
 			}
 			i.fa {
 				padding-left: $padding-xs;
 			}
+			
 			.subnav {
-				display: none;
+				visibility: hidden;
+				opacity: 0;
+				position: absolute;
+				bottom: 1px;
+				@include transform(translateY(100%));
+				left: -1px;
+				right: 0px;
+				border-bottom: 1px solid $hg-pink;
+				border-radius: 0px 0px $border-base-radius $border-base-radius;
+				overflow: hidden;
+				@include transition(opacity 0.2s ease-in-out);
+				z-index: 3;
 				li {
 					display: block;
+					a {
+						background-color: white;
+						height: auto;
+						line-height: 1;
+						text-transform: none;
+						width: auto;
+						display: block;
+						padding: $padding-s;
+						border-left: 1px solid $hg-pink;
+						border-color: $hg-pink;
+						&:hover {
+							background-color: lighten($hg-pink, 20%);
+							@include transition(opacity 0.1s ease-in-out);
+						}
+					}
 				}
+				li + li {
+					border-top: 1px solid $hg-pink;
+				}
+			}
+		}
+		.has-subnav {
+			&:hover {
+				background-color: lighten($hg-pink, 20%);
+				.subnav {
+					visibility: visible;
+					opacity: 1;
+				}
+			}
+			@include media($tablet) {
+				.fa {
+					display: none;
+				}
+				.subnav {
+					display: none;
+				}
+			}
+		}
+	}
+	.buy-button {
+		padding: 0 $padding-s;
+		a {
+			padding: $padding-xs $padding-base;
+			background-color: darken($hg-pink, 5%);
+			border-bottom: 2px solid darken($hg-pink, 15%);
+			border-radius: $border-base-radius;
+			color: white;
+			font-size: rem(18px);
+			@include transition(all 0.2s ease-in-out);
+			display: block;
+			&:hover {
+				border-bottom: 0px solid rgba(0,0,0,0);
+				@include transform(translateY(2px));
+			}
+		}
+	}
+	.mobile-search-button {
+		display: none;
+		color: white;
+		font-size: rem(28px);
+		height: $input-base-height + $padding-s;
+		line-height: $input-base-height + $padding-xs;
+		vertical-align: middle;
+		padding: 0px $padding-s;
+		@include media($tablet) {
+			display: inline-block;
+			&.active, &:hover {
+				background-color: darken($hg-pink, 5%);
 			}
 		}
 	}
@@ -44,7 +139,7 @@ header {
 			border: 1px solid darken($hg-pink, 5%);
 			@include placeholder {
 				font-family: $body-italic;
-				font-size: rem(14px);
+				font-size: rem(16px);
 			}
 			&:focus {
 			  border: 1px solid darken($hg-pink, 10%);
@@ -62,12 +157,13 @@ header {
 			padding-left: $padding-s;
 			color: $hg-pink;
 		}
+
 		#results-container {
 			position: absolute;
 			left: 0px;
 			right: 0px;
-			bottom: 0px;
-			@include transform(translateY(90%));
+			bottom: 6px;
+			@include transform(translateY(100%));
 			z-index: 2;
 			background: white;
 
@@ -78,7 +174,7 @@ header {
 				a {
 					display: block;
 					padding: $padding-s;
-					color: $text-body-color;
+					color: $black;
 					&:hover {
 						background: lighten($hg-pink, 15%);
 						color: darken($hg-pink, 5%);
@@ -89,14 +185,57 @@ header {
 					border-bottom: 1px solid darken($hg-pink, 5%);
 				}
 			}
+			.no-result {
+				display: block;
+				padding: $padding-s;
+				border-left: 1px solid darken($hg-pink, 5%);
+				border-right: 1px solid darken($hg-pink, 5%);
+				border-radius: 0px 0px $border-base-radius $border-base-radius;
+				border-bottom: 1px solid darken($hg-pink, 5%);
+			}
 			li + li {
 				border-top: 1px solid lighten($hg-pink,12%);
 			}
 		}
+		.mobile-close-button {
+	 		display: none;
+	 	}
+		@include media($tablet) {
+			display: none;
+			background-color: darken($hg-pink, 5%);
+		 	position: absolute;
+		 	bottom: 0px;
+		 	left: 0px;
+		 	right: 0px;
+		 	padding: $padding-base $padding-s;
+		 	@include transform(translateY(100%));
+		 	input {
+		 		@include span-columns(11);
+		 	}
+		 	.mobile-close-button {
+		 		display: inline-block;
+		 		font-size: $input-base-height;
+		 		color: darken($hg-pink, 30%);
+		 	}
+		 	&.active {
+		 		display: block;
+		 	}
+		}
 	}
 	.social-row {
 		a {
-			color: white;
+			color: darken($hg-pink, 5%);
+			font-size: rem(28px);
+			height: $input-base-height;
+			line-height: $input-base-height;
+			display: inline-block;
+			vertical-align: middle;
+			padding: 0px $padding-xs;
+			@include transition(all 0.2s ease-in-out);
+			&:hover {
+				@include transform(scale(1.1,1.1));
+			  text-shadow: 0 0 5px rgba(darken($hg-pink, 10%), 1);;
+			}
 		}
 	}
 }

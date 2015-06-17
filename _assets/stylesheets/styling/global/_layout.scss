@@ -16,3 +16,9 @@ body {
   background-color: $background;
   min-height: 100%;
 }
+.navbar-offset {
+  padding-top: rem(40px);
+}
+.half {
+  @include span-columns(6);
+}

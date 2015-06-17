@@ -61,3 +61,6 @@
   color: $color;
 }
 
+@mixin color-block-gradient($color) {
+  @include background(linear-gradient(180deg, $color 60%, darken($color,5%) 100%));
+}
