@@ -4,19 +4,39 @@ layout: default
 
 <div class="home">
   {% include featured.html %}
+  <div class="home-quick-about">
+    <div class="container">
+      <div class="intro-text">
+        <h3>
+          The Honest Guide to Cooking is an online resource with advice about how to go about cooking.
+        </h3>
+        <p>
+          The Guide contains no recipes - it is a guide to cooking, not a cookbook. It gives you a general understanding of what cooking is about, not a detailed explanation of everything that is or isn’t cooking, it will not fill you with the inspiration or know-how to create “culinary masterpieces”. 
+        </p>
+        <p>
+          It also has no long-winded paragraphs about picturesque places in Europe with the most amazing cuisines, although it has been written with the European population in mind, and probably does not apply to non-western cooking. 
+        </p>
+        <h3>
+          It will, however, teach you to cook, or at least teach you something that resembles cooking skills. 
+        </h3>
+        
+      </div>
+    </div>
+  </div>
   <div class="posts">
+    <li class="latest">
+      <h1>Latest Posts</h1>
+    </li>
     {% for post in paginator.posts %}
-      <div class="post">
-        <p class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</p>
+      <li class="post" style="background: {{post.color}}">
+        <h3>{{ post.type}}</h3>
+        <img src="/assets/{{post.image}}" alt="">
         <a href="{{ post.url | prepend: site.baseurl }}" class="post-link"><h1 class="h2 post-title">{{ post.title }}</h1></a>
         <p class="post-summary">
-          {% if post.summary %}
-            {{ post.summary }}
-          {% else %}
-            {{ post.excerpt }}
-          {% endif %}
+          {{ post.summary }}
         </p>
-      </div>
+        <p class="post-meta">Published on{{ post.date | date: "%b %-d, %Y" }}</p>
+      </li>
     {% endfor %}
   </div>
 

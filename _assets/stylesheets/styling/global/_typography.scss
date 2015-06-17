@@ -65,6 +65,15 @@ b {
   @extend %white-fonts;
 }
 
+%basic-padding {
+  h1,h2 {
+    padding-bottom: $padding-l;
+  }
+  h3,h4,h5,p {
+    padding-bottom: $padding-base;
+  }
+}
+
 h4,h5 {
   font-family: $body;
 }
@@ -79,7 +88,7 @@ h2 {
 }
 
 h3 {
-  @include font($script,rem(40px),$regular,$text-body-color);
+  @include font($script,rem(40px),$bold,$text-body-color);
   text-transform: uppercase;
   letter-spacing: 1px;
 }
@@ -90,7 +99,7 @@ blockquote {
 }
 
 h4 {
-  @include font($header,rem(21px),$semibold,$salmon);
+  @include font($body,rem(21px),$semibold,$salmon);
 }
 
 h5 {
@@ -99,7 +108,7 @@ h5 {
 
 p {
   @include font($body,rem(20px),$regular,$text-body-color);
-  line-height: 1.8;
+  line-height: 1.4;
 }
 
 blockquote {

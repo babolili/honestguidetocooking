@@ -16,14 +16,51 @@
 			@include col(8,0,$tablet,12,0);
 			padding: $padding-l;
 			position: relative;
-			img {
-				padding: $padding-xl;
+			.intro-image img {
+				padding: $padding-xl $padding-xl $padding-base $padding-xl;
 			}
+			text-align: center;
 		}
 		.smaller-feature {
 			@include color-block-gradient($hg-pink);
 			@include col(4,0,$tablet,12,0);
 			padding: $padding-l;
+		}
+	}
+}
+.home-quick-about {
+	padding: $padding-xl;
+	background-color: $light-pink;
+	.intro-text {
+		@include col(8,2,$tablet,10,1);
+		@extend %basic-padding;
+	}
+}
+.posts {
+	@include clearfix;
+	clear: both;
+	@include display(flex);
+	@include flex-flow(wrap);
+	> li {
+		@include display(flex);
+		@include span-columns(3);
+		text-align: center;
+		padding: $padding-base;
+		position: relative;
+		@extend %white-fonts;
+		&:first-child {
+			margin-left: -1px !important;
+		}
+		img {
+			max-height: rem(200px);
+			padding-bottom: $padding-base;
+		}
+
+		&:hover {
+			&:before {
+				visibility: visible;
+				opacity: 1;
+			}
 		}
 	}
 }
