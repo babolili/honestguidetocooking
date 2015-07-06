@@ -239,3 +239,10 @@ header {
 		}
 	}
 }
+
+footer {
+	height: $footer-height;
+	width: 100%;
+	display: block;
+	background-color: $hg-pink;
+}

@@ -1,0 +1,42 @@
+
+.posts {
+	@include clearfix;
+	clear: both;
+	@include display(flex);
+	@include flex-flow(wrap);
+
+	> li {
+		@include display(flex);
+		@include span-columns(3);
+		text-align: center;
+		padding: $padding-base;
+		position: relative;
+		@extend %white-fonts;
+		&:first-child {
+			margin-left: -1px !important;
+		}
+		img {
+			max-height: rem(200px);
+			padding-bottom: $padding-base;
+		}
+
+		&:hover {
+			&:before {
+				visibility: visible;
+				opacity: 1;
+			}
+		}
+		@include media($big-tablet) {
+			@include span-columns(4);
+		}
+		@include media($min-max-width) {
+			@include span-columns(2);
+		}
+
+	}
+	.latest {
+		background-color: $hg-pink;
+		text-align: right;
+		padding: $padding-l;
+	}
+}

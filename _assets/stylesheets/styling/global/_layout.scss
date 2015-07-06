@@ -18,6 +18,9 @@ body {
 }
 .navbar-offset {
   padding-top: rem(40px);
+  min-height: 100%;
+  padding-bottom: $footer-height; 
+  margin-bottom: -$footer-height;
 }
 .half {
   @include span-columns(6);
