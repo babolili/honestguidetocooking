@@ -1,0 +1,11 @@
+---
+layout: ingredient
+title: 
+type: "Ingredient"
+color: "#F18E8A"
+image: 
+summary: 
+date: 
+tags:
+- ingredient
+---

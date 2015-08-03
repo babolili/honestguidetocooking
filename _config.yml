@@ -59,13 +59,16 @@ markdown:     redcarpet
 redcarpet:
   extensions: ['smart', 'tables', 'with_toc_data']
 permalink:    pretty
-paginate:     10
+paginate:     12
 sass:
   compressed: true
 
+gems:
+  - jekyll-last-modified-at
+
 #rake boilerplate 
-post:
-  template: _post.txt
+ingredient:
+  template: _ingredient.txt
   extension: md
 page:
   template: _page.txt

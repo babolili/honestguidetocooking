@@ -10,14 +10,24 @@ layout: default
   </li>
   
   {% for post in site.tags.ingredient %}
-    <li class="post" style="background: {{post.color}}">
-      <h3>{{ post.type}}</h3>
-      <img src="/assets/{{post.image}}" alt="">
-      <a href="{{ post.url | prepend: site.baseurl }}" class="post-link"><h1 class="h2 post-title">{{ post.title }}</h1></a>
-      <p class="post-summary">
-        {{ post.summary }}
-      </p>
-      <p class="post-meta">Published on {{ post.date | date: "%b %-d, %Y" }}</p>
-    </li>
+    <a href="{{ post.url | prepend: site.baseurl }}" class="post" style="background: {{post.color}}">
+      <div class="hover-overlay" style="background: {{post.color}}">
+        <div class="ghost-button">
+          Read More
+        </div>
+      </div>
+      <h3 class="post-type">{{ post.type}}</h3>
+      {% assign post_image = post.image %}
+      {% if post_image == %} 
+        &nbsp; 
+      {% else %}
+        {{ post_image | image }}
+      {% endif %}
+      <h4>The Honest Guide to</h4>
+      <h1 class="h2 post-title">{{ post.title }}</h1>
+      <div class="post-meta">
+          {{post.date  | date: '%b %-d, %Y'}}
+      </div>
+    </a>
   {% endfor %}
  </div>

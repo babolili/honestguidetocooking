@@ -71,6 +71,7 @@ POST_TIME = DATE + ' ' + TIME
 
 # Directories
 POSTS = "_posts"
+INGREDIENT = "_posts/ingredient"
 DRAFTS = "_drafts"
 
 # == Helpers ===================================================================
@@ -136,15 +137,15 @@ end
 
 # rake post["Title"]
 desc "Create a post in _posts"
-task :post, :title do |t, args|
+task :ingredient, :title do |t, args|
   title = args[:title]
-  template = CONFIG["post"]["template"]
-  extension = CONFIG["post"]["extension"]
+  template = CONFIG["ingredient"]["template"]
+  extension = CONFIG["ingredient"]["extension"]
   editor = CONFIG["editor"]
   check_title(title)
   filename = "#{DATE}-#{transform_to_slug(title, extension)}"
   content = read_file(template)
-  create_file(POSTS, filename, content, title, editor)
+  create_file(INGREDIENT, filename, content, title, editor)
 end
 
 # rake draft["Title"]
