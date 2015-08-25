@@ -7,20 +7,68 @@ layout: default
   <div class="choice-blocks">
     
   </div>
+  <div class="chapters">
+    <div class="chapter select">
+      <div class="text-box">
+        <h1>
+          Select Chapter:
+        </h1>
+        <p>
+          The Honest Guide to cooking has 5 main chapters/topics for you to explore: <b>Equipment</b>, <b>Ingredients</b>, <b>Techniques</b>, <b>Tips & Tricks</b> and <b>Save My Dinner</b>! What do you want to learn about?
+        </p>
+      </div>
+    </div>
+    <a href="/equipment" class="chapter equipment">
+      {% image chapters/equipment.png %}
+      <div class="hover-overlay">
+        <div class="ghost-button">
+          The Honest Guide to Equipment
+        </div>
+      </div>
+    </a>
+    <a href="/ingredients" class="chapter ingredients">
+      {% image chapters/ingredients.png %}
+      <div class="hover-overlay">
+        <div class="ghost-button">
+          The Honest Guide to Ingredients
+        </div>
+      </div>
+    </a>
+    <a href="/techniques" class="chapter techniques">
+      {% image chapters/techniques.png %}
+      <div class="hover-overlay">
+        <div class="ghost-button">
+          The Honest Guide to Techniques
+        </div>
+      </div>
+    </a>
+    <a href="/tips-tricks" class="chapter tips-tricks">
+      {% image chapters/tips-tricks.png %}
+      <div class="hover-overlay">
+        <div class="ghost-button">
+          The Honest Guide to Tips &amp; Tricks
+        </div>
+      </div>
+    </a>
+    <a href="/save-dinner" class="chapter save-dinner">
+      {% image chapters/save-dinner.png %}
+      <div class="hover-overlay">
+        <div class="ghost-button">
+          Save My Dinner!
+        </div>
+      </div>
+    </a>
+  </div>
   <div class="posts">
     <li class="latest">
       <h1>Latest Posts:</h1>
       <p>
-        All the newest stuff, in one place
+        Not sure what kind of info you're looking for? Want some inspiration? Think you've read all our posts? Get all the newest stuff, in one place
       </p>
     </li>
-    {% for post in paginator.posts %}
+    {% for post in site.posts limit:23 %}
       <a href="{{ post.url | prepend: site.baseurl }}" class="post" style="background: {{post.color}}">
-        <div class="hover-overlay" style="background: {{post.color}}">
-          <div class="ghost-button">
-            Read More
-          </div>
-        </div>
+        
         <h3 class="post-type">{{ post.type}}</h3>
         {% assign post_image = post.image %}
         {% if post_image == %} 
@@ -33,10 +81,12 @@ layout: default
         <div class="post-meta">
             {{post.date  | date: '%b %-d, %Y'}}
         </div>
+        <div class="hover-overlay" style="background: {{post.color}}">
+          <div class="ghost-button">
+            Read More
+          </div>
+        </div>
       </a>
     {% endfor %}
-  
   </div>
-
-  {% include pagination.html %}
 </div>

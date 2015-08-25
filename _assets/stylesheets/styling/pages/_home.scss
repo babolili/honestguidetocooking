@@ -4,11 +4,16 @@
 		clear: both;
 		@include display(flex);
 		@include flex-flow(wrap);
-		
+		border-bottom: rem(5px) solid white;
+
 		> div {
+			max-height: 350px;
 			@include display(flex);
 			&:first-child {
 				margin-left: -1px !important;
+			}
+			img {
+				max-height: 300px;
 			}
 		}
 		.big-feature {
@@ -22,7 +27,7 @@
 			text-align: center;
 		}
 		.smaller-feature {
-			@include color-block-gradient($hg-pink);
+			@include color-block-gradient($magenta);
 			@include col(4,0,$tablet,12,0);
 			padding: $padding-l;
 			.image-container {
@@ -32,6 +37,9 @@
 				.image-container {
 					@include transform(scale(1.1,1.1));
 				}
+			}
+			@include media($tablet) {
+				display: none;
 			}
 		}
 	}
@@ -43,4 +51,74 @@
 		@include col(8,2,$tablet,10,1);
 		@extend %basic-padding;
 	}
+}
+.chapters {
+	@include display(flex);
+	@include flex-flow(wrap);
+}
+.chapter {
+	@include display(flex);
+	@include span-columns(4);
+	text-align: center;
+	padding: $padding-base;
+	position: relative;
+	@extend %white-fonts;
+	border-bottom: 5px solid white;
+	img {
+		max-height: 400px;
+	}
+	&:first-child {
+		margin-left: -1px !important;
+	}
+	&.equipment {
+		@include color-block-gradient($equipment);
+		.hover-overlay {
+			background-color: $equipment;
+		}
+	}
+	&.ingredients {
+		@include color-block-gradient($ingredients);
+		.hover-overlay {
+			background-color: $ingredients;
+		}
+	}
+	&.techniques {
+		@include color-block-gradient($techniques);
+		.hover-overlay {
+			background-color: $techniques;
+		}
+	}
+	&.tips-tricks {
+		@include color-block-gradient($tips-tricks);
+		.hover-overlay {
+			background-color: $tips-tricks;
+		}
+	}
+	&.save-dinner {
+		@include color-block-gradient($save-dinner);
+		.hover-overlay {
+			background-color: $save-dinner;
+		}
+	}
+	&.select {
+		@include color-block-gradient($light-pink);
+		.text-box {
+			text-align: right;
+			padding-top: $padding-xl;
+		}
+	}
+	@extend %overlay-support;
+			@include media($min-max-width) {
+			@include span-columns(2);
+		}
+
+		@include media($tablet) {
+			@include span-columns(6);
+			img {
+				max-height: 250px;
+			}
+		}
+		@include media($large-phone) {
+			@include span-columns(12);
+		}
 }

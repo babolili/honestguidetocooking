@@ -1,9 +1,48 @@
-
+%overlay-support {
+	.hover-overlay {
+		opacity: 0;
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		right: 0px;
+		bottom: 0px;
+		text-align: center;
+		@include transition(all 0.2s ease-in-out);
+		.ghost-button {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			@include transform(translate(-50%,-50%));
+			display: inline-block;
+			@include button(white, rgba(0,0,0,0), white, white);
+			&:hover {
+				background: rgba(white,0);
+			}
+		}
+		@include media($tablet) {
+			position: relative;
+			opacity: 1;
+			.ghost-button {
+				position: relative;
+				@include transform(translate(0,0));
+				top: 0;
+				left: 0;
+				margin-bottom: $padding-base;
+			}
+		}
+	}
+	&:hover {
+		.hover-overlay {
+			opacity: 0.9;
+		}
+	}
+}
 .posts {
 	@include clearfix;
 	clear: both;
 	@include display(flex);
 	@include flex-flow(wrap);
+	
 
 	.post, .latest {
 		@include display(flex);
@@ -11,6 +50,7 @@
 		text-align: center;
 		padding: $padding-base;
 		position: relative;
+		border-bottom: rem(5px) solid white;
 		@extend %white-fonts;
 		&:first-child {
 			margin-left: -1px !important;
@@ -38,51 +78,35 @@
 			padding-bottom: $padding-l;
 		}
 		.post-meta {
-			text-align: right;
-			font-size: rem(27px);
-			font-family: $script;
+			text-align: center;
+			font-size: rem(16px);
+			font-family: $bold;
 			color: white;
 			font-weight: $bold;
 			.post-date {
 				font-family: $body-emphasis;
 			}
 		}
-		@include media($big-tablet) {
-			@include span-columns(4);
-		}
+		@extend %overlay-support;
 		@include media($min-max-width) {
 			@include span-columns(2);
 		}
-		.hover-overlay {
-			opacity: 0;
-			position: absolute;
-			top: 0px;
-			left: 0px;
-			right: 0px;
-			bottom: 0px;
-			text-align: center;
-			@include transition(all 0.2s ease-in-out);
-			.ghost-button {
-				position: absolute;
-				top: 50%;
-				left: 50%;
-				@include transform(translate(-50%,-50%));
-				display: inline-block;
-				@include button(white, rgba(0,0,0,0), white, white);
-				&:hover {
-					background: rgba(white,0);
-				}
-			}
+		@include media($big-tablet) {
+			@include span-columns(4);
 		}
-		&:hover {
-			.hover-overlay {
-				opacity: 0.9;
-			}
+		@include media($tablet) {
+			@include span-columns(6);
+		}
+		@include media($large-phone) {
+			@include span-columns(12);
 		}
 	}
 	.latest {
 		background-color: $hg-pink;
 		text-align: right;
 		padding: $padding-l;
+		@include media($large-phone) {
+			text-align: center;
+		}
 	}
 }

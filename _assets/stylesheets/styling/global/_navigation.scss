@@ -103,7 +103,7 @@ header {
 		a {
 			padding: $padding-xs $padding-base;
 			background-color: darken($hg-pink, 5%);
-			border-bottom: 2px solid darken($hg-pink, 15%);
+			border-bottom: 2px solid darken($hg-pink, 30%);
 			border-radius: $border-base-radius;
 			color: white;
 			font-size: rem(18px);
@@ -117,7 +117,7 @@ header {
 	}
 	.mobile-search-button {
 		display: none;
-		color: white;
+		color: $hg-pink;
 		font-size: rem(28px);
 		height: $input-base-height + $padding-s;
 		line-height: $input-base-height + $padding-xs;
@@ -127,6 +127,7 @@ header {
 			display: inline-block;
 			&.active, &:hover {
 				background-color: darken($hg-pink, 5%);
+				color: white;
 			}
 		}
 	}
@@ -214,8 +215,9 @@ header {
 		 	}
 		 	.mobile-close-button {
 		 		display: inline-block;
+		 		padding-left: $padding-s;
 		 		font-size: $input-base-height;
-		 		color: darken($hg-pink, 30%);
+		 		color: white;
 		 	}
 		 	&.active {
 		 		display: block;
@@ -234,7 +236,6 @@ header {
 			@include transition(all 0.2s ease-in-out);
 			&:hover {
 				@include transform(scale(1.1,1.1));
-			  text-shadow: 0 0 5px rgba(darken($hg-pink, 10%), 1);;
 			}
 		}
 	}
@@ -245,4 +246,20 @@ footer {
 	width: 100%;
 	display: block;
 	background-color: $hg-pink;
+	text-align: center;
+	.copyright {
+		height: $footer-height;
+		line-height: $footer-height;
+		display: inline-block;
+		padding-right: $padding-base;
+		color: white;
+		a, a:hover, a:visited {
+			color: white;
+			text-decoration: underline;
+			font-family: $bold;
+		}
+		b {
+			font-family: $bold;
+		}
+	}
 }
