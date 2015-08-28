@@ -1,4 +1,55 @@
 .home {
+	background: $hg-pink;
+	height: 100%;
+	position: relative;
+	.coming-soon {
+		height: auto;
+		position: absolute;
+		top: 50%;
+		left: 0px;
+		right: 0px;
+		@include transform(translate(0%,-50%));
+		img {
+			max-width: 350px;
+			padding-bottom: $padding-base;
+		}
+		text-align: center;
+		.content-block {
+			@include clearfix;
+			display: inline-block;
+			.block {
+				max-width: 350px;
+				float: left;
+				text-align: center;
+				h2 {
+					color: white;
+					font-size: rem(16px);
+				}
+				h3 {
+					color: white;
+				}
+			}
+		}
+		@include media($tablet) {
+			position: relative;
+			@include transform(translate(0%,0%));
+			top: 0%;
+			.content-block {	
+				width: 100%;
+				text-align: center;
+				img {
+					max-height: 40%;
+				}
+				.block {
+					float: none;
+					display: inline-block;
+				}
+				.slap-block img {
+					max-height: 150px;
+				}
+			}
+		}
+	}
 	.feature-row {
 		@include clearfix;
 		clear: both;

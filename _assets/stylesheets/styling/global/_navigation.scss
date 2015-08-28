@@ -247,6 +247,9 @@ footer {
 	display: block;
 	background-color: $hg-pink;
 	text-align: center;
+	.container {
+		background: $hg-pink;
+	}
 	.copyright {
 		height: $footer-height;
 		line-height: $footer-height;
@@ -261,5 +264,8 @@ footer {
 		b {
 			font-family: $bold;
 		}
+	}
+	@include media($tablet) {
+		height: auto;
 	}
 }
