@@ -1,5 +1,6 @@
+
 body {
-  background-color: $background;
+  
   &.noscroll {
   	height: 100%;
   	overflow: hidden;
@@ -21,6 +22,9 @@ body {
   min-height: 100%;
   padding-bottom: $footer-height; 
   margin-bottom: -$footer-height;
+  @include media($phone) {
+    padding-top: 0px;
+  }
 }
 .half {
   @include span-columns(6);

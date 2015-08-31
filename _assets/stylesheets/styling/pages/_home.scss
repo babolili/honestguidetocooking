@@ -4,7 +4,6 @@
 		clear: both;
 		@include display(flex);
 		@include flex-flow(wrap);
-		border-bottom: rem(5px) solid white;
 
 		> div {
 			max-height: 350px;
@@ -63,7 +62,6 @@
 	padding: $padding-base;
 	position: relative;
 	@extend %white-fonts;
-	border-bottom: 5px solid white;
 	img {
 		max-height: 400px;
 	}
@@ -105,10 +103,17 @@
 		.text-box {
 			text-align: right;
 			padding-top: $padding-xl;
+			p {
+				font-size: rem(16px);
+				max-width: 70%;
+				float: right;
+				line-height: 1.2;
+				font-family: $body-italic;
+			}
 		}
 	}
 	@extend %overlay-support;
-			@include media($min-max-width) {
+		@include media($min-max-width) {
 			@include span-columns(2);
 		}
 
@@ -116,6 +121,9 @@
 			@include span-columns(6);
 			img {
 				max-height: 250px;
+			}
+			.hover-overlay {
+				background-color: rgba(white,0) !important;
 			}
 		}
 		@include media($large-phone) {

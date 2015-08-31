@@ -27,7 +27,7 @@ $body: 'bariol-regular', $best-sans-fonts;
 $bold: 'bariol-bold', $best-sans-fonts;
 $body-italic: 'bariol-italic', $best-sans-fonts;
 $body-emphasis: 'bariol-bold-italic', $best-sans-fonts;
-$script: 'mathlete-bold', cursive;
+$script: 'bdrouen', cursive;
 $header: 'intro', $best-serif-fonts;
 
 body {
@@ -89,7 +89,7 @@ h2 {
 }
 
 h3 {
-  @include font($script,rem(40px),$bold,$text-body-color);
+  @include font($script,rem(24px),$regular,darken($hg-pink, 5%));
   text-transform: uppercase;
   letter-spacing: 1px;
 }
