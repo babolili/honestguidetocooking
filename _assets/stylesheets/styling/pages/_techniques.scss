@@ -1,0 +1,32 @@
+.technique-image {
+	padding: $padding-base;
+	@include col(5,0,$tablet,3,0);
+	position: relative;
+	img {
+		position: absolute;
+		max-width: 100%;
+		top: 50%;
+		@include transform(translateY(20%));
+	}
+	@include media($large-phone) {
+		img {
+			position: relative;
+			max-height: 200px;
+			top: 0%;
+			@include transform(translateY(0%));
+		}
+	}
+}
+
+.step-row {
+	@include span-columns(4);
+	.step-image {
+		padding: $padding-base;
+		img {
+			max-height: 200px;
+		}
+	}
+	.step-caption {
+		padding: $padding-l;
+	}
+}

@@ -71,8 +71,13 @@ POST_TIME = DATE + ' ' + TIME
 
 # Directories
 POSTS = "_posts"
-INGREDIENT = "_posts/ingredient"
+INGREDIENT = "_posts/ingredients"
+EQUIPMENT = "_posts/equipment"
+TIPSTRICKS = "_posts/tipstricks"
+TECHNIQUES = "_posts/techniques"
+SAVEDINNER = "_posts/savedinner"
 DRAFTS = "_drafts"
+
 
 # == Helpers ===================================================================
 
@@ -135,8 +140,8 @@ end
 
 # == Tasks =====================================================================
 
-# rake post["Title"]
-desc "Create a post in _posts"
+# rake ingredient["Title"]
+desc "Create a ingredient post"
 task :ingredient, :title do |t, args|
   title = args[:title]
   template = CONFIG["ingredient"]["template"]
@@ -146,6 +151,58 @@ task :ingredient, :title do |t, args|
   filename = "#{DATE}-#{transform_to_slug(title, extension)}"
   content = read_file(template)
   create_file(INGREDIENT, filename, content, title, editor)
+end
+
+# rake equipment["Title"]
+desc "Create a equipment post"
+task :equipment, :title do |t, args|
+  title = args[:title]
+  template = CONFIG["equipment"]["template"]
+  extension = CONFIG["equipment"]["extension"]
+  editor = CONFIG["editor"]
+  check_title(title)
+  filename = "#{DATE}-#{transform_to_slug(title, extension)}"
+  content = read_file(template)
+  create_file(EQUIPMENT, filename, content, title, editor)
+end
+
+# rake tips["Title"]
+desc "Create a tipstricks post"
+task :tipstricks, :title do |t, args|
+  title = args[:title]
+  template = CONFIG["tipstricks"]["template"]
+  extension = CONFIG["tipstricks"]["extension"]
+  editor = CONFIG["editor"]
+  check_title(title)
+  filename = "#{DATE}-#{transform_to_slug(title, extension)}"
+  content = read_file(template)
+  create_file(TIPSTRICKS, filename, content, title, editor)
+end
+
+# rake techniques["Title"]
+desc "Create a techniques post"
+task :techniques, :title do |t, args|
+  title = args[:title]
+  template = CONFIG["techniques"]["template"]
+  extension = CONFIG["techniques"]["extension"]
+  editor = CONFIG["editor"]
+  check_title(title)
+  filename = "#{DATE}-#{transform_to_slug(title, extension)}"
+  content = read_file(template)
+  create_file(TECHNIQUES, filename, content, title, editor)
+end
+
+# rake savedinner["Title"]
+desc "Create a savedinner post"
+task :savedinner, :title do |t, args|
+  title = args[:title]
+  template = CONFIG["savedinner"]["template"]
+  extension = CONFIG["savedinner"]["extension"]
+  editor = CONFIG["editor"]
+  check_title(title)
+  filename = "#{DATE}-#{transform_to_slug(title, extension)}"
+  content = read_file(template)
+  create_file(SAVEDINNER, filename, content, title, editor)
 end
 
 # rake draft["Title"]

@@ -54,6 +54,10 @@ assets:
   cache: false
   debug: false
 
+tag_page_layout: tag_page
+tag_page_dir: tag
+tag_permalink_style: pretty
+
 # Build settings
 markdown:     redcarpet
 redcarpet:
@@ -69,6 +73,18 @@ gems:
 #rake boilerplate 
 ingredient:
   template: _ingredient.txt
+  extension: md
+equipment:
+  template: _equipment.txt
+  extension: md
+tipstricks:
+  template: _tipstricks.txt
+  extension: md
+techniques:
+  template: _techniques.txt
+  extension: md
+savedinner:
+  template: _savedinner.txt
   extension: md
 page:
   template: _page.txt

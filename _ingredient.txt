@@ -6,6 +6,9 @@ color: "#F18E8A"
 image: 
 summary: 
 date: 
+related:
+storage:
+lifespan:
 tags:
 - ingredient
 ---

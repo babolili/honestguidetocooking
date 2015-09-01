@@ -1,10 +1,9 @@
 ---
 layout: default
 ---
-
 <div class="post-header" style="background: {{page.color}};">
   <div class="container">
-    <div class="subject-image">
+    <div class="technique-image">
       {% assign page_image = page.image %}
       {% if page_image == %} 
         &nbsp; 
@@ -18,20 +17,12 @@ layout: default
         {{page.summary}}
       </h3>
       <div class="pointer-containers">
-        <div class="storage">
-          <div class="header">
-            <i class="fa fa-archive"></i>
-            <b>Store it</b>
-          </div>
-          <p>{{page.storage}}</p>
-        </div>
-        <div class="longevity">
-          <div class="header">
-            <i class="fa fa-clock-o"></i>
-            <b>Keep it</b>
-          </div>
-          <p>{{page.lifespan}}</p>
-        </div>
+        {% assign page_process = page.process %}
+        {% if page_process == %} 
+          &nbsp; 
+        {% else %}
+          {{ page_process | image }}
+        {% endif %}
       </div>
       <div class="post-meta">
         <div class="tag-bubbles" style="color: {{page.color}};">
@@ -44,7 +35,28 @@ layout: default
     </div>
   </div>
 </div>
-
+<div class="container">
+  {% for steps in page.steps %}
+    <div class="step-row">
+      <div class="step-image" style="background: rgba({{page.rgb}},{{steps.alpha}})">
+        {% assign steps_image = steps.image %}
+        {% if steps_image == %} 
+          &nbsp; 
+          {% else %}
+          {{ steps_image | image }}
+        {% endif %}
+        <h2>
+          {{steps.step}}
+        </h2>
+      </div>
+      <div class="step-caption">
+        <p>
+          {{ steps.content }}
+        </p>
+      </div>
+    </div>
+  {% endfor %}
+</div>
 <div class="container post-container">
   <article class="text">
     {{ content }}
@@ -76,3 +88,4 @@ layout: default
     </div>
   </div>
 </div>
+</div>  

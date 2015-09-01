@@ -1,0 +1,16 @@
+---
+layout: techniques
+title: 
+type: "technique"
+color:
+rgb: 
+image: techniques
+structure:
+summary: 
+date: 
+related:
+care:
+tags:
+- techniques
+steps: 
+---

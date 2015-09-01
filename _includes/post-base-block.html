@@ -1,0 +1,15 @@
+<a href="{{ post.url | prepend: site.baseurl }}" class="post" style="background: {{post.color}}">  
+  <h3 class="post-type">{{ post.type}}</h3>
+  {% assign post_image = post.image %}
+  {% if post_image == %} 
+    &nbsp; 
+  {% else %}
+    {{ post_image | image }}
+  {% endif %}
+  <h1 class="post-title wordwrap">{{ post.title }}</h1>
+  <div class="hover-overlay" style="background: {{post.color}}">
+    <div class="ghost-button">
+      Read More
+    </div>
+  </div>
+</a>

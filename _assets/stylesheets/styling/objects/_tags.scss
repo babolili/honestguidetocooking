@@ -1,0 +1,22 @@
+.tag-bubbles {
+
+	padding-top: $padding-base;
+	a {
+		padding: $padding-xs $padding-l;
+		color: white;
+		background-color: rgba(0,0,0,0.08);
+		display: inline-block;
+		border-radius: $border-base-radius;
+		font-family: $bold;
+		line-height: 1;
+		margin-bottom: $padding-xs;
+		&:hover {
+			background-color: rgba(0,0,0,0.17);
+		}
+	}
+	&.large {
+		a {
+			font-size: rem(21px);
+		}
+	}
+}

@@ -18,19 +18,19 @@ layout: default
         {{page.summary}}
       </h3>
       <div class="pointer-containers">
-        <div class="storage">
+        <div class="cost">
           <div class="header">
-            <i class="fa fa-archive"></i>
-            <b>Store it</b>
+            <i class="fa fa-money"></i>
+            <b>What it costs</b>
           </div>
-          <p>{{page.storage}}</p>
+          <p>{{page.cost}}</p>
         </div>
-        <div class="longevity">
+        <div class="care">
           <div class="header">
-            <i class="fa fa-clock-o"></i>
-            <b>Keep it</b>
+            <i class="fa fa-heart"></i>
+            <b>How to Care For</b>
           </div>
-          <p>{{page.lifespan}}</p>
+          <p>{{page.care}}</p>
         </div>
       </div>
       <div class="post-meta">
@@ -60,10 +60,29 @@ layout: default
           Not sure what kind of info you're looking for? Want some inspiration? Think you've read all our posts? Get all the newest stuff, in one place
         </p>
       </li>
-      {%include post-base-block.html %}
+      <a href="{{ post.url | prepend: site.baseurl }}" class="post" style="background: {{post.color}}">
+        
+        <h3 class="post-type">{{ post.type}}</h3>
+        {% assign post_image = post.image %}
+        {% if post_image == %} 
+          &nbsp; 
+        {% else %}
+          {{ post_image | image }}
+        {% endif %}
+        <h4>The Honest Guide to</h4>
+        <h1 class="h2 post-title">{{ post.title }}</h1>
+        <div class="post-meta">
+            {{post.date  | date: '%b %-d, %Y'}}
+        </div>
+        <div class="hover-overlay" style="background: {{post.color}}">
+          <div class="ghost-button">
+            Read More
+          </div>
+        </div>
+      </a>
     </div>
     {% else %}
-    &nbsp; 
+    
   {% endif %}
 {% endfor %}
 <div class="related-content" style="background: {{page.color}};">
