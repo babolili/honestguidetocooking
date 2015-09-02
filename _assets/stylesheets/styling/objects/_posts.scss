@@ -77,6 +77,9 @@
 		.post-title {
 			padding-bottom: $padding-l;
 			font-size: rem(50px);
+			@include media($small-screen) {
+				font-size: rem(40px);
+			}
 		}
 		.post-meta {
 			text-align: center;
@@ -88,14 +91,7 @@
 				font-family: $body-emphasis;
 			}
 		}
-		&.tips {
-			.post-title {
-				display: none;
-			}
-			h3 {
-				color: darken($hg-pink, 5%);
-			}
-		}
+
 		@extend %overlay-support;
 		.hover-overlay .ghost-button:hover {
 			border: 2px solid white;
