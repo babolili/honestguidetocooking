@@ -1,5 +1,5 @@
 ---
-layout: tipstricks
+layout: default
 title: "herb storage" 
 type: "tips"
 color: "#FFFFFF"

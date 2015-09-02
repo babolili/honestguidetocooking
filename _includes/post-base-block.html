@@ -1,6 +1,7 @@
 <a href="{{ post.url | prepend: site.baseurl }}" class="post {{ post.type}}" style="background: {{post.color}}">  
   <h3 class="post-type">{{ post.type}}</h3>
   {% assign post_image = post.image %}
+  {{ if post.}}
   {% if post_image == %} 
     &nbsp; 
   {% else %}
