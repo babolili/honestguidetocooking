@@ -86,6 +86,9 @@ techniques:
 savedinner:
   template: _savedinner.txt
   extension: md
+general:
+  template: _general.txt
+  extension: md
 page:
   template: _page.txt
   extension: md

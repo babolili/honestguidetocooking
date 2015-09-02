@@ -13,4 +13,24 @@ care:
 tags:
 - techniques
 steps: 
+- step: ""
+  alpha: "0.15"
+  image: techniques/
+  content: "" 
+- step: ""
+  alpha: "0.25"
+  image: techniques/
+  content: "" 
+- step: ""
+  alpha: "0.35"
+  image: techniques/
+  content: "" 
+- step: ""
+  alpha: "0.45"
+  image: techniques/
+  content: "" 
+- step: ""
+  alpha: "0.55"
+  image: techniques/
+  content: ""
 ---

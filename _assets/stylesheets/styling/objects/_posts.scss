@@ -37,6 +37,7 @@
 		}
 	}
 }
+
 .posts {
 	@include clearfix;
 	clear: both;
@@ -85,6 +86,14 @@
 			font-weight: $bold;
 			.post-date {
 				font-family: $body-emphasis;
+			}
+		}
+		&.tips {
+			.post-title {
+				display: none;
+			}
+			h3 {
+				color: darken($hg-pink, 5%);
 			}
 		}
 		@extend %overlay-support;
@@ -195,60 +204,60 @@
 	border-top: 1px dashed rgba(255,255,255,0.8);
 }
 
-	.post-header {
-		@include media($large-phone) {
-			text-align: center;
-		}
-		.subject-image {
-			padding: $padding-base;
-			@include col(3,0,$large-phone,12,0);
-			position: relative;
-			img {
-				position: absolute;
-				max-width: 100%;
-				top: 50%;
-				@include transform(translateY(20%));
-			}
-			@include media($large-phone) {
-				img {
-					position: relative;
-					max-height: 200px;
-					top: 0%;
-					@include transform(translateY(0%));
-				}
-			}
-		}
-		.subject-name {
-			padding: $padding-xl*2 0px $padding-xl $padding-xl;
-			@include col(7,0,$tablet,9,0);
-			@include omega();
-			@extend %white-fonts;
-			@include media($large-phone) {
-				@include span-columns(12);
-				padding: $padding-base 0px;
-			}
-			.subject-summary {
-				font-weight: normal;
-				font-size: rem(30px);
-			}
-		}
-		.tag-bubbles {
-			padding-bottom: $padding-l;
-		}
-		.pointer-containers {
-			> div {
-				.header {
-					font-size: rem(21px);
-					color: white;
-					text-transform: uppercase;
-					padding-bottom: $padding-xs;
-				}
-				p {
-					font-size: rem(16px);
-				}
-			}
-			img {
-				max-width: 80%;
-			}
-		}	
+.post-header {
+	@include media($large-phone) {
+		text-align: center;
 	}
+	.subject-image {
+		padding: $padding-base;
+		@include col(3,0,$large-phone,12,0);
+		position: relative;
+		img {
+			position: absolute;
+			max-width: 100%;
+			top: 50%;
+			@include transform(translateY(20%));
+		}
+		@include media($large-phone) {
+			img {
+				position: relative;
+				max-height: 200px;
+				top: 0%;
+				@include transform(translateY(0%));
+			}
+		}
+	}
+	.subject-name {
+		padding: $padding-xl*2 0px $padding-xl $padding-xl;
+		@include col(7,0,$tablet,9,0);
+		@include omega();
+		@extend %white-fonts;
+		@include media($large-phone) {
+			@include span-columns(12);
+			padding: $padding-base 0px;
+		}
+		.subject-summary {
+			font-weight: normal;
+			font-size: rem(30px);
+		}
+	}
+	.tag-bubbles {
+		padding-bottom: $padding-l;
+	}
+	.pointer-containers {
+		> div {
+			.header {
+				font-size: rem(21px);
+				color: white;
+				text-transform: uppercase;
+				padding-bottom: $padding-xs;
+			}
+			p {
+				font-size: rem(16px);
+			}
+		}
+		img {
+			max-width: 80%;
+		}
+	}	
+}

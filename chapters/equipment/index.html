@@ -1,0 +1,15 @@
+---
+layout: default
+---
+<div class="posts">
+  <li class="latest">
+    <h1>Latest Posts:</h1>
+    <p>
+      All the newest stuff, in one place
+    </p>
+  </li>
+  
+  {% for post in site.tags.equipment %}
+    {%include post-base-block.html %}
+  {% endfor %}
+ </div>

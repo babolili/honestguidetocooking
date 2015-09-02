@@ -1,47 +1,57 @@
-<div class="chapters">
-  <div class="chapter select">
-    <div class="text-box">
-      <h1>
-        Learn About:
-      </h1>
-      <p>
-        The Honest Guide to cooking has 5 main chapters/topics for you to explore: <b>Equipment</b>, <b>Ingredients</b>, <b>Techniques</b>, <b>Tips & Tricks</b> and <b>Save My Dinner</b>! What do you want to learn about?
-      </p>
+<div class="chapter-select">
+    <div class="container">
+      <div class="learn-about">
+        <h2>
+          What would <u>you</u> like to learn about?
+        </h2>
+        <p>
+          The Honest Guide to cooking has 6 main chapters/topics for you to explore: <b>General Advice</b><b>Equipment</b>, <b>Ingredients</b>, <b>Techniques</b>, <b>Tips & Tricks</b> and <b>Save My Dinner</b>! Click on a chapter to read more about your topic.
+        </p>
+      </div>
     </div>
   </div>
-  <a href="/equipment" class="chapter equipment">
+<div class="chapters">
+  <a href="/chapters/general" class="chapter general">
+    {% image chapters/general.png %}
+    <div class="hover-overlay">
+      <div class="ghost-button">
+        General Advice
+      </div>
+    </div>
+  </a>
+  <a href="/chapters/equipment" class="chapter equipment">
     {% image chapters/equipment.png %}
     <div class="hover-overlay">
       <div class="ghost-button">
-        The Honest Guide to Equipment
+        Learn about Equipment
       </div>
     </div>
   </a>
-  <a href="/ingredients" class="chapter ingredients">
+  <a href="/chapters/ingredients" class="chapter ingredients">
     {% image chapters/ingredients.png %}
     <div class="hover-overlay">
       <div class="ghost-button">
-        The Honest Guide to Ingredients
+        Learn about Ingredients
       </div>
     </div>
   </a>
-  <a href="/techniques" class="chapter techniques">
+  <a href="/chapters/techniques" class="chapter techniques">
     {% image chapters/techniques.png %}
     <div class="hover-overlay">
       <div class="ghost-button">
-        The Honest Guide to Techniques
+        Learn about Techniques
       </div>
     </div>
   </a>
-  <a href="/tips-tricks" class="chapter tips-tricks">
+  <a href="/chapters/tipstricks" class="chapter tips-tricks">
     {% image chapters/tips-tricks.png %}
     <div class="hover-overlay">
       <div class="ghost-button">
-        The Honest Guide to Tips &amp; Tricks
+        Tips &amp; Tricks
       </div>
     </div>
   </a>
-  <a href="/save-dinner" class="chapter save-dinner">
+  <a href="/chapters/savedinner" class="chapter save-dinner">
     {% image chapters/save-dinner.png %}
     <div class="hover-overlay">
       <div class="ghost-button">

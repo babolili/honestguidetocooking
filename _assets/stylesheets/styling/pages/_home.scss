@@ -51,6 +51,15 @@
 		@extend %basic-padding;
 	}
 }
+.chapter-select {
+	background-color: $light-pink;
+	padding: $padding-l;
+	@extend %white-fonts;
+	.learn-about {
+		@include col(8,2,$large-phone,12,0);
+		text-align: center;
+	}
+}
 .chapters {
 	@include display(flex);
 	@include flex-flow(wrap);
@@ -65,9 +74,7 @@
 	img {
 		max-height: 400px;
 	}
-	&:first-child {
-		margin-left: -1px !important;
-	}
+
 	&.equipment {
 		@include color-block-gradient($equipment);
 		.hover-overlay {
@@ -98,18 +105,10 @@
 			background-color: $save-dinner;
 		}
 	}
-	&.select {
-		@include color-block-gradient($light-pink);
-		.text-box {
-			text-align: right;
-			padding-top: $padding-xl;
-			p {
-				font-size: rem(16px);
-				max-width: 70%;
-				float: right;
-				line-height: 1.2;
-				font-family: $body-italic;
-			}
+	&.general {
+		@include color-block-gradient($general);
+		.hover-overlay {
+			background-color: $general;
 		}
 	}
 	@extend %overlay-support;

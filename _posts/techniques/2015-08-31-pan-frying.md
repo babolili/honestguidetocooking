@@ -7,11 +7,12 @@ rgb: "205,69,99"
 image: techniques/pan-fry.png
 process: techniques/panfry-process.png
 date: 2015-08-31 15:42:53 
-related:
-cost:
-care:
+related: "pan frying"
 tags:
 - techniques
+- "pan frying"
+- "quick methods"
+- "pan"
 steps: 
 - step: "Chop"
   alpha: "0.15"
@@ -31,7 +32,7 @@ steps:
   content: "You could say that pan frying is the fastest cooking method (If you don’t count microwaving as a cooking method). It’s important to keep an eye on the pan during the entire process, so that you can adjust the heat. You want to hear a sizzling sound, but not see any burning. "
 - step: "FRY MEDIUM HEAT"
   alpha: "0.55"
-  image: techniques/pan-fry.png
+  image: techniques/panfry/step5.png
   content: "The length of time and heat you fry a particular ingredient will depend on its thickness and also on how done you want it (this is especially true for meats). You can even use the high temperature of the pan to get a crispy crust on something, then finish the dish in the oven. "
 - step: "FINISH"
   alpha: "0.65"

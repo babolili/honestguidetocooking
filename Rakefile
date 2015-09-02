@@ -76,6 +76,7 @@ EQUIPMENT = "_posts/equipment"
 TIPSTRICKS = "_posts/tipstricks"
 TECHNIQUES = "_posts/techniques"
 SAVEDINNER = "_posts/savedinner"
+GENERAL = "_posts/general"
 DRAFTS = "_drafts"
 
 
@@ -203,6 +204,19 @@ task :savedinner, :title do |t, args|
   filename = "#{DATE}-#{transform_to_slug(title, extension)}"
   content = read_file(template)
   create_file(SAVEDINNER, filename, content, title, editor)
+end
+
+# rake general["Title"]
+desc "Create a general post"
+task :general, :title do |t, args|
+  title = args[:title]
+  template = CONFIG["general"]["template"]
+  extension = CONFIG["general"]["extension"]
+  editor = CONFIG["editor"]
+  check_title(title)
+  filename = "#{DATE}-#{transform_to_slug(title, extension)}"
+  content = read_file(template)
+  create_file(GENERAL, filename, content, title, editor)
 end
 
 # rake draft["Title"]

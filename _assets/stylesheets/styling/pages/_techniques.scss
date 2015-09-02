@@ -9,6 +9,8 @@
 		@include transform(translateY(20%));
 	}
 	@include media($large-phone) {
+		@include span-columns(12);
+		text-align: center;
 		img {
 			position: relative;
 			max-height: 200px;
@@ -17,13 +19,31 @@
 		}
 	}
 }
+.steps-container {
+	@include outer-container;
+}
 
 .step-row {
-	@include span-columns(4);
+	@include col(4,0,$tablet,6,0);
+	@include omega(3n);
+	@include media($tablet) {
+		@include omega-reset(3n, 12);
+		@include omega(2n);
+	}
+	@include media($phone) {
+		@include span-columns(12);
+	}
 	.step-image {
 		padding: $padding-base;
 		img {
 			max-height: 200px;
+		}
+		@extend %white-fonts;
+		text-align: center;
+		h2 {
+			width: 100%;
+			overflow: hidden;
+			white-space: nowrap;
 		}
 	}
 	.step-caption {
