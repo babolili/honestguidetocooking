@@ -1,7 +1,7 @@
 ---
 layout: equipment
 title: "Chopping Board" 
-type: "Equipment"
+type: "equipment"
 color: "#00ADA7"
 image: equipment/chopping-board.png
 summary: 
@@ -10,7 +10,6 @@ related: chopping
 cost: "Depends on the type. You can easily find cheap lighter and plastic versions that are great for day to day use. More expensive, heavier chopping boards often double as decoration in the kitchen"
 care: "Clean all your chopping boards thoroughly after use and make sure they dry properly before storing. Avoid stabbing motions on the chopping board as this can cause dents and splits."
 tags:
-- equipment
 - "chopping board"
 - chopping
 - basics

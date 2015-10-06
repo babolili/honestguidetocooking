@@ -13,7 +13,7 @@ layout: default
       </p>
     </li>
     {% for post in site.posts limit:23 %}
-      {% if post.type == "tips" %}
+      {% if post.type == "Tips & Tricks" %}
       {% else %}
         {%include post-base-block.html %}
       {% endif %}

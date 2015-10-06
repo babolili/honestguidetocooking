@@ -1,0 +1,13 @@
+---
+layout: savedinner
+title: 
+type: "Save My Dinner"
+save-type: 
+summary: 
+color: "#F18E8A"
+image: 
+date: 
+related: foil
+tags:
+- "save my dinner"
+---

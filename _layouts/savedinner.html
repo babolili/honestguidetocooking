@@ -4,7 +4,7 @@ layout: default
 
 <div class="post-header" style="background: {{page.color}};">
   <div class="container">
-    <div class="technique-image">
+    <div class="subject-image">
       {% assign page_image = page.image %}
       {% if page_image == %} 
         &nbsp; 
@@ -17,14 +17,6 @@ layout: default
       <h3 class="subject-summary">
         {{page.summary}}
       </h3>
-      <div class="pointer-containers">
-        {% assign page_process = page.process %}
-        {% if page_process == %} 
-          &nbsp; 
-        {% else %}
-          {{ page_process | image }}
-        {% endif %}
-      </div>
       <div class="post-meta">
         <div class="tag-bubbles" style="color: {{page.color}};">
           {{ page | tags }}
@@ -36,39 +28,18 @@ layout: default
     </div>
   </div>
 </div>
-<div class="steps-container">
-  {% for steps in page.steps %}
-    <div class="step-row">
-      <div class="step-image" style="background: rgba({{page.rgb}},{{steps.alpha}})">
-        {% assign steps_image = steps.image %}
-        {% if steps_image == %} 
-          &nbsp; 
-          {% else %}
-          {{ steps_image | image }}
-        {% endif %}
-        <h2>
-          {{steps.step}}
-        </h2>
-      </div>
-      <div class="step-caption">
-        <p>
-          {{ steps.content }}
-        </p>
-      </div>
-    </div>
-  {% endfor %}
-</div>
+
 <div class="container post-container">
   <article class="text">
     {{ content }}
   </article>
 </div>
-{% assign related_term = page.related %}
+{% assign related_term = page.save-type %}
 {% for post in site.related_posts %}
   {% if post.related == related_term %}
     <div class="posts" style="background: {{page.color}}">
       <li class="related">
-        <h1>More about {{page.related}}:</h1>
+        <h1>More about {{page.save-type}}:</h1>
         <p>
           Not sure what kind of info you're looking for? Want some inspiration? Think you've read all our posts? Get all the newest stuff, in one place
         </p>
@@ -89,9 +60,8 @@ layout: default
     </div>
   </div>
 </div>
-</div>  
 <div class="back-to" style="background: {{page.color}};">
   <div class="container">
-    <a href="/chapters/techniques"><i class="fa fa-angle-left"></i> Back to Techniques</a>
+    <a href="/chapters/savedinner"><i class="fa fa-angle-left"></i> Back to Save My Dinner</a>
   </div>
 </div>

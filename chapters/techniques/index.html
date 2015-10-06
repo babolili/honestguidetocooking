@@ -1,5 +1,6 @@
 ---
 layout: default
+title: Cooking Techniques
 ---
 <div class="posts">
   <li class="latest">
@@ -9,7 +10,9 @@ layout: default
     </p>
   </li>
   
-  {% for post in site.tags.techniques %}
-    {%include post-base-block.html %}
+  {% for post in site.posts %}
+  	{% if post.type == "technique" %}
+    	{%include post-base-block.html %}
+    {% endif %}
   {% endfor %}
  </div>

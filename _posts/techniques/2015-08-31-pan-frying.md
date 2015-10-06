@@ -9,7 +9,6 @@ process: techniques/panfry-process.png
 date: 2015-08-31 15:42:53 
 related: "pan frying"
 tags:
-- techniques
 - "pan frying"
 - "quick methods"
 - "pan"

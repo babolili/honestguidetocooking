@@ -72,25 +72,25 @@ gems:
 
 #rake boilerplate 
 ingredient:
-  template: _ingredient.txt
-  extension: md
+  template: templates/_ingredient.txt
+  extension: md 
 equipment:
-  template: _equipment.txt
+  template: templates/_equipment.txt
   extension: md
 tipstricks:
-  template: _tipstricks.txt
+  template: templates/_tipstricks.txt
   extension: md
 techniques:
-  template: _techniques.txt
+  template: templates/_techniques.txt
   extension: md
 savedinner:
-  template: _savedinner.txt
+  template: templates/_savedinner.txt
   extension: md
 general:
-  template: _general.txt
+  template: templates/_general.txt
   extension: md
 page:
-  template: _page.txt
+  template: templates/_page.txt
   extension: md
 editor: gvim
 git:

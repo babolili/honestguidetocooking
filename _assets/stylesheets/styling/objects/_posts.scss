@@ -179,6 +179,31 @@
 			padding-right: $padding-l;
 			padding-bottom: $padding-l;	
 		}
+		.center {
+			width: 100%;
+			text-align: center;
+		}
+		ul {
+			li {
+				padding-left: $padding-xl;
+				position: relative;
+				padding-top: $padding-s;
+				p {
+					padding-bottom: $padding-s;
+				}
+				&:before {
+					content: $fa-var-cutlery;
+					font-family: $icon-font;
+					position: absolute;
+					left: 0px;
+					top: $padding-s*2;
+					color: $hg-pink;
+				}
+			}
+			li + li {
+				border-top: 1px dotted rgba($hg-pink, 0.5);
+			}
+		}
 		@include media($large-phone) {
 				padding: $padding-base;
 				@include simple-col(12,0);
