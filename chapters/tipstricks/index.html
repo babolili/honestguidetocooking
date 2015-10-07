@@ -23,13 +23,13 @@ title: Tips & Tricks
     </div>
   </div>
 </div>
-<div class="posts">
-  {% for tiptype in site.tiptypes %}
-  <section>
-      <h1>{{ tiptype | first }}</h1>
-      {% for post in tiptype %}
-        {%include tip-base-block.html %}
-      {% endfor %}
-  </section>
+<div class="posts tricks">
+  <div class="tricks">
+    <div class="container">
+      <h1>Storing & Treating Ingredients</h1>
+    </div>
+  </div>
+  {% for post in site.tags.storage %}
+      {%include tip-base-block.html %}
   {% endfor %}
- </div>
+</div>

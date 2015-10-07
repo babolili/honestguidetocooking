@@ -2,17 +2,91 @@
 layout: default
 Title: Save my dinner!
 ---
+<div class="chapter-header save-dinner">
+  <div class="center-blocks">
+    <div class="image-block">
+      {% image chapters/save-dinner.png %}  
+    </div>
+    <div class="description-block">
+      <h3>
+        Cooking can be really random and changeable, which is it why pays off when you, 
+      as a cook, can be completely flexible.   
+      </h3>
+      <p>
+        Things will go wrong...Sometimes VERY WRONG, but that’s OK. If you’re adaptable and able to understand the processes that will help you fix your mistakes, you’ll do just fine. 
+      </p>
+    </div>
+  </div>
+</div>
+<div class="save-dinner-intro">
+  <div class="center-blocks">
+    <div class="image-block">
+      {% image chapters/save-dinner2.png %}  
+    </div>
+    <div class="description-block">
+      <h2>How to save a dinner</h2>
+      <p>
+        Setting out to do things right is all good, but when things go wrong, don’t think that you have to start over or settle to eat the disaster you have created   
+      </p>
+      <h3>
+        Shit happens, but cooking can be very forgiving when things have gone wrong. 
+      </h3>
+      <p>
+        You can end up with a dish that is the opposite of what you started out to do, but it doesn’t mean it is a failure (unless it’s inedible). Disaster recovery isn’t really a time machine.  
+      </p>
+      <p>
+         Think of it as making the choices that will give you the best end result, not as forcing the food back into what you originally wanted. Think of your failed dishes as new ingredients, not as failures.   
+      </p>
+      <p>
+        Start by locating the characteristic that makes you think the dish is unsuccessful:   
+      </p>
+      <ol>
+        <li>TEXTURE</li>
+        <li>TASTE</li>
+        <li>APPEARANCE</li>
+      </ol>
+      <p>
+         And if the only problem is it looks or tastes like another dish than what you intended – just pretend it’s the dish you’d set out to do.
+      </p>
+      <h3>
+        If it smells good, tastes good, looks good and feels fine, then there’s nothing to worry about. 
+      </h3>
+    </div>
+  </div>
+</div>
 <div class="posts">
-  <li class="latest">
-    <h1>Latest Posts:</h1>
-    <p>
-      All the newest stuff, in one place
-    </p>
-  </li>
-  
+  <a class="savedinner-headers texture">
+    <h1>Texture</h1> 
+    <h3>
+      Something is wrong with the texture
+    </h3>
+    <div class="giant-button">
+      Save my Dinner!
+    </div>
+  </a>
+  <a class="savedinner-headers taste">
+    <h1>Taste</h1> 
+    <h3>
+      Something is wrong with the flavour
+    </h3>
+    <div class="giant-button">
+      Save my Dinner!
+    </div>
+  </a>
+  <a class="savedinner-headers appearance">
+    <h1>Appearance</h1> 
+    <h3>
+      It just looks wrong
+    </h3>
+
+    <div class="giant-button">
+      Save my Dinner!
+    </div>
+  </a>
   {% for post in site.posts %}
   	{% if post.type == "Save My Dinner" and post.save-type == "texture" %}
     	{%include post-base-block.html %}
     {% endif %}
   {% endfor %}
  </div>
+

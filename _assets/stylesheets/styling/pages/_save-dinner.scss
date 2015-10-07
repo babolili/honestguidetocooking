@@ -1,0 +1,88 @@
+.save-dinner-intro {
+	@include clearfix; 
+	background-color: $save-dinner;
+	@extend %white-fonts;
+	padding: $padding-xl*2 0 $padding-l 0;
+	.center-blocks {
+		@include col(10,1,$tablet,12,0);
+		> div {
+			display: inline-block;
+			vertical-align: top;
+		}
+		.image-block {
+			width: 30%;
+			text-align: center;
+		}
+		.description-block {
+			width: 69%;
+			padding-left: $padding-base;
+			padding-bottom: $padding-xl*2;
+			@extend %numbered-list;
+			ol {
+				padding: $padding-base;
+				li {
+					color: white;
+				}
+			}
+			p {
+				padding-bottom: $padding-base;
+			}
+		}
+	}
+	&.techniques {
+		.center-blocks {
+			> div {
+				vertical-align: top;
+			}
+		}
+	}
+	@include media($tablet) {
+		padding: $padding-l 0; 
+		.center-blocks {
+			.description-block, .image-block {
+				width: 100%;
+				display: block;
+				padding-bottom: $padding-base;
+				img {
+					max-height: 400px;
+				}
+			}
+		}
+	}
+}
+.savedinner-headers {
+	@include col(4,0,$tablet,6,0);
+	padding: $padding-l;
+	@extend %white-fonts;
+	&.texture {
+		background-color: #FEAF51;
+	}
+	&.taste {
+		background-color: #AEDBB8;
+	}
+	&.appearance {
+		background-color: #BD4587;
+	}
+	h1 {
+		padding-bottom: $padding-base;
+	}
+	h3 {
+		padding-bottom: $padding-l;
+	}
+	.giant-button {
+		width: 100%;
+		height: rem(100px);
+		display: inline-block;
+		border: 3px solid white;
+		border-radius: 10px;
+		line-height: rem(100px);
+		font-family: $bold;
+		text-transform: uppercase;
+		font-size: rem(21px);
+		text-align: center;
+		color: white;
+	}
+	@include media($phone) {
+		@include simple-col(12,0);
+	}
+}

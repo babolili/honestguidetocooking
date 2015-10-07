@@ -1,5 +1,5 @@
 ---
-layout: tipstricks
+layout: default
 title: 
 type: "Tips and Tricks"
 category: tip
@@ -7,7 +7,7 @@ color: "#FFFFFF"
 image: 
 date: 
 related:
-tip-type: 
+tiptype: 
 tags:
 - ingredient
 ---
