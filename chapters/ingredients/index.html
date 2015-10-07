@@ -2,15 +2,29 @@
 layout: default
 title: Ingredients
 ---
-<div class="posts">
-  <li class="latest">
-    <h1>Latest Posts:</h1>
-    <p>
-      All the newest stuff, in one place
-    </p>
-  </li>
-  
-  {% for post in site.tags.ingredients %}
-    {%include post-base-block.html %}
+<div class="chapter-header ingredients">
+	<div class="center-blocks">
+		<div class="image-block">
+			{% image chapters/ingredients.png %}	
+		</div>
+		<div class="description-block">
+			<h3>
+				Just as with equipment, there are only a few ingredients that you really need for cooking - but the rest are fun too.
+			</h3>
+			<p>
+				There are some ingredients you will need so often that it would just be silly not to stock up on them - these are your basic ingredients. 
+			</p>
+			<p>
+				You can think of them as a kind of framework from which you build your dishes, just by adding the components you want to work with - be it proteins, starches or vegetables. (Please note that these base ingredients may vary from cuisine to cuisine!) 
+			</p>
+			<h2>
+        This chapter has {% for post in site.categories.ingredient %} {% capture post_count %} {{ post_count | plus: 1 }} {% endcapture %} {% endfor %} {{ post_count }} posts
+      </h2>
+		</div>
+	</div>
+</div>
+<div class="posts">  
+  {% for post in site.categories.ingredient %}
+    	{%include post-base-block.html %}
   {% endfor %}
  </div>

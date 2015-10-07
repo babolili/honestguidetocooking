@@ -2,6 +2,7 @@
 layout: techniques
 title: "Pan Frying" 
 type: "technique"
+category: technique
 color: "#CD4563"
 rgb: "205,69,99"
 image: techniques/pan-fry.png

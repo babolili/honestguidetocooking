@@ -10,21 +10,7 @@
 	}
 }
 
-.chapters {
-	@include display(flex);
-	@include flex-flow(wrap);
-}
-.chapter {
-	@include display(flex);
-	@include span-columns(4);
-	text-align: center;
-	padding: $padding-base;
-	position: relative;
-	@extend %white-fonts;
-	img {
-		max-height: 400px;
-	}
-
+%chapter-gradients {
 	&.equipment {
 		@include color-block-gradient($equipment);
 		.hover-overlay {
@@ -61,6 +47,24 @@
 			background-color: $general;
 		}
 	}
+}
+
+.chapters {
+	@include display(flex);
+	@include flex-flow(wrap);
+}
+.chapter {
+	@include display(flex);
+	@include span-columns(4);
+	text-align: center;
+	padding: $padding-base;
+	position: relative;
+	@extend %white-fonts;
+	img {
+		max-height: 400px;
+	}
+
+	@extend %chapter-gradients;
 	@extend %overlay-support;
 		@include media($min-max-width) {
 			@include span-columns(2);
@@ -78,4 +82,56 @@
 		@include media($large-phone) {
 			@include span-columns(12);
 		}
+}
+.chapter-header {
+	@include clearfix;
+	@extend %chapter-gradients;
+	@extend %white-fonts;
+	padding: $padding-xl*2 0;
+	.center-blocks {
+		@include col(10,1,$tablet,12,0);
+		> div {
+			display: inline-block;
+			vertical-align: bottom;
+		}
+		.image-block {
+			width: 50%;
+			text-align: center;
+		}
+		.description-block {
+			width: 49%;
+			padding-left: $padding-base;
+			padding-bottom: $padding-xl*2;
+			@extend %numbered-list;
+			ol {
+				padding: $padding-base;
+				li {
+					color: white;
+				}
+			}
+			p {
+				padding-bottom: $padding-base;
+			}
+		}
+	}
+	&.techniques {
+		.center-blocks {
+			> div {
+				vertical-align: top;
+			}
+		}
+	}
+	@include media($tablet) {
+		padding: $padding-l 0; 
+		.center-blocks {
+			.description-block, .image-block {
+				width: 100%;
+				display: block;
+				padding-bottom: $padding-base;
+				img {
+					max-height: 400px;
+				}
+			}
+		}
+	}
 }

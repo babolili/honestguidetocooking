@@ -2,17 +2,29 @@
 layout: default
 title: Cooking Equipment
 ---
-<div class="posts">
-  <li class="latest">
-    <h1>Latest Posts:</h1>
-    <p>
-      All the newest stuff, in one place
-    </p>
-  </li>
-  
-  {% for post in site.posts %}
-  	{% if post.type == "equipment"%}
+<div class="chapter-header equipment">
+  <div class="center-blocks">
+    <div class="image-block">
+      {% image chapters/equipment.png %}  
+    </div>
+    <div class="description-block">
+      <h3>
+        Let’s start with your equipment. Chances are, you will have more than you really need.    
+      </h3>
+      <p>
+        Kitchen gadgetry is sometimes pretty exciting stuff, but don’t get carried away. Too many tools can be paralysing. If strapped for cash, there are only a few things that you REALLY need, and others that only make life a little easier.
+      </p>
+      <p>
+         Then there are some tools that only seem to make life easier until you realize you have to wash them. A basic kit for kitchen survival will take you a long way.
+      </p>
+      <h2>
+        This chapter has {% for post in site.categories.equipment %} {% capture post_count %} {{ post_count | plus: 1 }} {% endcapture %} {% endfor %} {{ post_count }} posts
+      </h2>
+    </div>
+  </div>
+</div>
+<div class="posts">  
+  {% for post in site.categories.equipment %}
     	{%include post-base-block.html %}
-    {% endif %}
   {% endfor %}
  </div>

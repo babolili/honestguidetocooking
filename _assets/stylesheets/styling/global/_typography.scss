@@ -110,10 +110,31 @@ h5 {
 p {
   @include font($body,rem(20px),$regular,$text-body-color);
   line-height: 1.4;
+  b {
+    font-family: $bold;
+  }
 }
 
 blockquote {
 
+}
+
+%numbered-list {
+  ol {
+    counter-reset: section;
+    li {
+      padding-left: $padding-l;
+      position: relative;
+      @extend p;
+      &:before {
+        counter-increment: section;
+        content: counters(section,".")".";
+        position: absolute;
+        left: 0px;
+        font-family: $bold;
+      }
+    }
+  }
 }
 
 .wordwrap { 

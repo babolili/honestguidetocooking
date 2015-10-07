@@ -66,9 +66,8 @@ permalink:    pretty
 paginate:     12
 sass:
   compressed: true
-
-gems:
-  - jekyll-last-modified-at
+gems: 
+- jekyll-last-modified-at
 
 #rake boilerplate 
 ingredient:

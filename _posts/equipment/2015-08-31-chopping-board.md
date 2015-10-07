@@ -2,6 +2,7 @@
 layout: equipment
 title: "Chopping Board" 
 type: "equipment"
+category: equipment
 color: "#00ADA7"
 image: equipment/chopping-board.png
 summary: 

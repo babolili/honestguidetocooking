@@ -2,6 +2,7 @@
 layout: tipstricks
 title: 
 type: "Tips and Tricks"
+category: tip
 color: "#FFFFFF"
 image: 
 date: 

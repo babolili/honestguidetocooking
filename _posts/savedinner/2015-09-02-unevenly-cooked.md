@@ -2,6 +2,7 @@
 layout: savedinner
 title: "Unevenly Cooked" 
 type: "Save My Dinner"
+category: savedinner
 save-type: texture
 summary: "Burnt on the inside, cooked on the outside"
 color: "rgba(254,175,81,0.6)"

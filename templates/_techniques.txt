@@ -2,6 +2,7 @@
 layout: techniques
 title: 
 type: "technique"
+category: technique
 color:
 rgb: 
 image: techniques

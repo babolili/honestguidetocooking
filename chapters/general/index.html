@@ -2,17 +2,29 @@
 layout: default
 title: General Cooking Advice
 ---
+<div class="chapter-header general">
+  <div class="center-blocks">
+    <div class="image-block">
+      {% image chapters/general.png %}  
+    </div>
+    <div class="description-block">
+      <h3>
+        Cooking is an interesting subject because it is so fiercely ingrained into our lives, our culture and our society. It's something almost all of us are affected by. 
+      </h3>
+      <p>
+        A lot of people have a lot of opinions about cooking - who should do it, when they should do it, how much of it they should do, what they should be doing - the list goes on. As a result of all this opinionating, sometimes there is not enough talking about cooking itself. Why do we do the things we do? How does it affect the outcome? 
+      </p>
+      <p>
+        While we often talk of cooking within a cultural context, there's also a lot of science and structure to cooking that can be hard to learn from following recipes. This chapter will contain general musings on cooking, interspersed with the odd lesson and experiment.
+      </p>
+      <h2>
+        This chapter has {% for post in site.categories.general %} {% capture post_count %} {{ post_count | plus: 1 }} {% endcapture %} {% endfor %} {{ post_count }} {% if post_count == null %} no {% endif %} posts
+      </h2>
+    </div>
+  </div>
+</div>
 <div class="posts">
-  <li class="latest">
-    <h1>Latest Posts:</h1>
-    <p>
-      All the newest stuff, in one place
-    </p>
-  </li>
-  
-  {% for post in site.posts %}
-  	{% if post.type == "General Advice"%}
-    	{%include post-base-block.html %}
-    {% endif %}
+  {% for post in site.categories.general %}
+      {%include post-base-block.html %}
   {% endfor %}
- </div>
+</div>

@@ -2,6 +2,7 @@
 layout: ingredient
 title: 
 type: "Ingredient"
+category: ingredient
 color: "#F18E8A"
 image: 
 summary: 

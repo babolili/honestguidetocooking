@@ -19,4 +19,20 @@ layout: default
       {% endif %}
     {% endfor %}
   </div>
+  <div class="posts tricks">
+    
+    <div class="tricks">
+      <div class="container">
+        <h1>Latest Tips & Tricks:</h1>
+        <p>
+          Just here for the #foodhacks? No worries, we've got you sorted.
+        </p>
+      </div>
+    </div>
+    {% for post in site.posts limit:23 %}
+      {% if post.type == "Tips & Tricks" %}
+        {%include tip-base-block.html %}
+      {% endif %}
+    {% endfor %}
+  </div>
 </div>

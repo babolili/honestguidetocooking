@@ -1,0 +1,11 @@
+<div class="post">  
+  <h3 class="tip-type">{{ post.tiptype}} Tip</h3>
+  {% assign post_image = post.image %}
+  {{ if post.}}
+  {% if post_image == %} 
+    &nbsp; 
+  {% else %}
+    {{ post_image | image }}
+  {% endif %}
+  <h3 class="post-title wordwrap">{{ post.title }}</h3>
+</div>

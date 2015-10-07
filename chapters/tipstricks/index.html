@@ -1,0 +1,35 @@
+---
+layout: default
+title: Tips & Tricks
+---
+<div class="chapter-header tips-tricks">
+  <div class="center-blocks">
+    <div class="image-block">
+      {% image chapters/tips-tricks.png %}  
+    </div>
+    <div class="description-block">
+      <h3>
+        The Guide is critical of using the word “expert” because it involves a lot of bias, but there are people out there who have done a lot of experimenting with cooking, and it would be silly for us to completely ignore their advice.  
+      </h3>
+      <p>
+        There are some practical tips and tricks that you can use in the kitchen to make cooking quicker, easier, or simply make you feel more like a genius/badass/crazy scientist. 
+      </p>
+      <p>
+        Not all of them will appeal to you, and this is not anywhere close to being a comprehensive list, but hopefully you can find it inspirational.
+      </p>
+      <h2>
+        This chapter has {% for post in site.categories.tip %} {% capture post_count %} {{ post_count | plus: 1 }} {% endcapture %} {% endfor %} {{ post_count }} {% if post_count == null %} no {% endif %} posts
+      </h2>
+    </div>
+  </div>
+</div>
+<div class="posts">
+  {% for tiptype in site.tiptypes %}
+  <section>
+      <h1>{{ tiptype | first }}</h1>
+      {% for post in tiptype %}
+        {%include tip-base-block.html %}
+      {% endfor %}
+  </section>
+  {% endfor %}
+ </div>

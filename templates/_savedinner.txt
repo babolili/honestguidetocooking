@@ -2,6 +2,7 @@
 layout: savedinner
 title: 
 type: "Save My Dinner"
+category: savedinner
 save-type: 
 summary: 
 color: "#F18E8A"

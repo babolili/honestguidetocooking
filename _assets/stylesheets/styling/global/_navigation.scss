@@ -21,6 +21,7 @@ header {
 		float: right;
 		> div {
 			display: inline-block;
+			vertical-align: middle;
 		}
 	}
 	.nav-links {
@@ -36,7 +37,7 @@ header {
 				border-right: 1px solid lighten($hg-pink, 15%);
 				line-height: $input-base-height + $padding-s;
 				color: darken($hg-pink, 5%);
-				font-weight: $heavy;
+				font-family: $bold;
 				text-transform: uppercase;
 				@include transition(background  0.2s ease-in-out);
 				&:hover {

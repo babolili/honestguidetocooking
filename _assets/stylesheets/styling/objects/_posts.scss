@@ -43,7 +43,32 @@
 	clear: both;
 	@include display(flex);
 	@include flex-flow(wrap);
-	
+	.no-posts {
+		padding: $padding-xl;
+	}
+	&.tricks {
+		.tricks {
+			@extend %white-fonts;
+			display: block;
+			background: $tips-tricks;
+			width: 100%;
+			padding: $padding-xl;
+		}
+		.post {
+			h1,h2,h3,h4,h5,h6,p {
+				color: $hg-pink;
+			}
+			h3 {
+				font-size: rem(27px);
+			}
+			.tip-type {
+				font-size: rem(21px);
+				text-transform: uppercase;
+				padding-bottom: $padding-xs;
+				margin-bottom: $padding-base;
+			}	
+		}	
+	}
 
 	.post, .latest, .related {
 		@include display(flex);
@@ -67,7 +92,7 @@
 			}
 		}
 		.post-type {
-			font-size: rem(27px);
+			font-size: rem(21px);
 			margin-bottom: $padding-base;
 			text-align: left;
 			padding-left: $padding-base;

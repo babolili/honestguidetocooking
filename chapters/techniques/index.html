@@ -2,17 +2,47 @@
 layout: default
 title: Cooking Techniques
 ---
+<div class="chapter-header techniques">
+  <div class="center-blocks">
+    <div class="image-block">
+      {% image chapters/techniques.png %}  
+    </div>
+    <div class="description-block">
+      <h3>
+        Most dishes will require three stages of cooking, each with their own unique sets of actions.  
+      </h3>
+      <ol>
+        <li>
+          Preparing the Ingredients
+        </li>
+        <li>
+          Cooking the Ingredients
+        </li>
+        <li>
+          Post-cooking actions  
+        </li>
+      </ol>
+      <p>
+        <b>BE STRUCTURED!</b> Do all of your preparation before you start cooking, and do all of your cooking before post-cooking! At least until you’re able to do more complex feats of timing.   
+      </p>
+      <p>
+        All the cutting, washing, marinating and bashing usually happens in the preparation stage. Combining, heating and blending can be considered the cooking stage, and post-cooking actions are more about adjustments to be made to flavour, texture or appearance. 
+      </p>
+      <p>
+        Some “dishes” consist of several components that are actually prepared and cooked separately and only come together in the post-cooking stage or on the final plate.
+        Dishes that have similar characteristics in texture and appearance are often cooked the same way.
+      </p>
+      <p>
+        There is a basic structure or sequence of actions for each of these types of dishes. 
+      </p>
+      <h2>
+        This chapter has {% for post in site.categories.technique %} {% capture post_count %} {{ post_count | plus: 1 }} {% endcapture %} {% endfor %} {{ post_count }} posts
+      </h2>
+    </div>
+  </div>
+</div>
 <div class="posts">
-  <li class="latest">
-    <h1>Latest Posts:</h1>
-    <p>
-      All the newest stuff, in one place
-    </p>
-  </li>
-  
-  {% for post in site.posts %}
-  	{% if post.type == "technique" %}
+  {% for post in site.categories.technique %}
     	{%include post-base-block.html %}
-    {% endif %}
   {% endfor %}
  </div>
