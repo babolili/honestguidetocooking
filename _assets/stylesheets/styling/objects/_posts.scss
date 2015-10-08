@@ -43,8 +43,8 @@
 	clear: both;
 	@include display(flex);
 	@include flex-flow(wrap);
-	.no-posts {
-		padding: $padding-xl;
+	&.home {
+		background-color: $light-pink;
 	}
 	&.tricks {
 		.tricks {

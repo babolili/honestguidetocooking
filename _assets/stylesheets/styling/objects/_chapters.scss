@@ -49,9 +49,20 @@
 	}
 }
 
+
 .chapters {
 	@include display(flex);
 	@include flex-flow(wrap);
+	.chapter-header {
+		background-color: $hg-pink;
+		width: 100%;
+		display: block;
+		clear: both;
+		text-align: center;
+		h1 {
+			@include outer-container;
+		}
+	}
 }
 .chapter {
 	@include display(flex);
