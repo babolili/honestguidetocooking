@@ -5,10 +5,9 @@ type: "Save My Dinner"
 category: savedinner
 save-type: texture
 summary: "Burnt on the inside, cooked on the outside"
-color: "rgba(254,175,81,0.6)"
+color: "#FFC881"
 image: savedinner/uneven.png
 date: 2015-09-02 16:24:28 
-related: doneness
 tags:
 - doneness
 - raw

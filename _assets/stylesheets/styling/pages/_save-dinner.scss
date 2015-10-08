@@ -52,22 +52,46 @@
 }
 .savedinner-headers {
 	@include col(4,0,$tablet,6,0);
-	padding: $padding-l;
+	padding: $padding-xl $padding-l;
 	@extend %white-fonts;
+	text-align: center;
+	//@include transition(all 0.3s ease-in);
 	&.texture {
-		background-color: #FEAF51;
+		background-color: $texture;
+		&:hover {
+			background-color: darken($texture, 15%);
+		}
 	}
 	&.taste {
-		background-color: #AEDBB8;
+		background-color: $taste;
+		&:hover {
+			background-color: darken($taste, 15%);
+		}
 	}
 	&.appearance {
-		background-color: #BD4587;
+		background-color: $appearance;
+		&:hover {
+			background-color: darken($appearance, 15%);
+		}
+	}
+	&.hidden {
+		display: none;
 	}
 	h1 {
 		padding-bottom: $padding-base;
+		font-size: rem(50px);
+		@include media($small-screen) {
+			font-size: rem(40px);
+		}
 	}
 	h3 {
 		padding-bottom: $padding-l;
+	}
+	&.disabled {
+		pointer-events: none;
+		.giant-button {
+			border: 0px;
+		}
 	}
 	.giant-button {
 		width: 100%;
@@ -84,5 +108,79 @@
 	}
 	@include media($phone) {
 		@include simple-col(12,0);
+	}
+	&.active {
+		width: 100%;
+		border-bottom: 1px dashed white;
+		.giant-button {
+			opacity: 0;
+			height: 0px;
+			overflow: hidden;
+		}
+		&:after {
+			content: '< Psst. If something else is wrong, click here';
+			font-family: $bold;
+			font-size: rem(18px);
+			text-align: center;
+			color: white;
+			display: block;
+			@include transition(all 0.5s ease-in-out);
+		}
+		&:hover {
+			background-color: $texture;
+			&:after {
+				@include transform(scale(1.2,1.2));
+			}
+		}
+	}
+}
+.savedinner-cat {
+	width: 100%;
+	@include clearfix;
+	display: none;
+	@include transition(height 0.3s ease-in);
+	
+	&.texture {
+		background-color: $texture;
+	}
+	&.taste {
+		background-color: $taste;
+	}
+	&.appearance {
+		background-color: $appearance;
+	}
+	&.active {
+		display: block;
+	}
+	.close-toggle {
+		width: 100%;
+		padding: $padding-l;
+		text-align: center;
+		@include clearfix;
+		@extend %white-fonts;
+		clear: both;
+		display: block;
+		&.texture {
+			background-color: darken($texture,5%);
+			&:hover {
+				background-color: darken($texture,15%);
+			}
+		}
+		&.taste {
+			background-color: darken($taste,5%);
+			&:hover {
+				background-color: darken($taste,15%);
+			}
+		}
+		&.appearance {
+			background-color: darken($appearance,15%);
+			&:hover {
+				background-color: darken($appearance,5%);
+			}
+		}
+		&.active {
+			position: relative;
+			height: auto;
+		}
 	}
 }

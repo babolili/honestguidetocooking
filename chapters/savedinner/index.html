@@ -55,7 +55,7 @@ Title: Save my dinner!
   </div>
 </div>
 <div class="posts">
-  <a class="savedinner-headers texture">
+  <a href="#" class="savedinner-headers texture" id="texture-toggle">
     <h1>Texture</h1> 
     <h3>
       Something is wrong with the texture
@@ -64,29 +64,43 @@ Title: Save my dinner!
       Save my Dinner!
     </div>
   </a>
-  <a class="savedinner-headers taste">
+  <a class="savedinner-headers disabled taste" id="taste-toggle">
     <h1>Taste</h1> 
     <h3>
       Something is wrong with the flavour
     </h3>
     <div class="giant-button">
-      Save my Dinner!
+      Coming soon...
     </div>
   </a>
-  <a class="savedinner-headers appearance">
+  <a class="savedinner-headers disabled appearance" id="appearance-toggle">
     <h1>Appearance</h1> 
     <h3>
-      It just looks wrong
+      Something is wrong with the way it looks
     </h3>
-
     <div class="giant-button">
-      Save my Dinner!
+      Coming soon...
     </div>
   </a>
-  {% for post in site.posts %}
-  	{% if post.type == "Save My Dinner" and post.save-type == "texture" %}
-    	{%include post-base-block.html %}
+  {% for post in site.categories.savedinner %}
+    {% if post.save-type == "texture" %}
+      <div class="savedinner-cat texture" id="texture-block">
+        {%include post-base-block.html %}  
+        <a href="#" class="close-toggle texture">
+            <h2>
+              <i class="fa fa-arrow-left"></i> It wasn't texture after all. Let's try something else.
+            </h2>
+        </a>
+      </div>
+    {% elsif post.save-type == "taste"%}
+      <div class="savedinner-cat taste">
+        {%include post-base-block.html %}  
+      </div>
+    {% else %}
+      <div class="savedinner-cat appearance">
+        {%include post-base-block.html %}  
+      </div>
     {% endif %}
   {% endfor %}
- </div>
+</div>
 

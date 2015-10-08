@@ -50,22 +50,21 @@ layout: default
     {{ content }}
   </article>
 </div>
-{% assign related_term = page.related %}
-{% for post in site.related_posts %}
-  {% if post.related == related_term %}
-    <div class="posts" style="background: {{page.color}}">
-      <li class="related">
-        <h1>More about {{page.related}}:</h1>
-        <p>
-          Not sure what kind of info you're looking for? Want some inspiration? Think you've read all our posts? Get all the newest stuff, in one place
-        </p>
-      </li>
-      {%include post-base-block.html %}
-    </div>
-    {% else %}
-    &nbsp; 
-  {% endif %}
-{% endfor %}
+<div class="posts" style="background: {{page.color}}">
+  <li class="related">
+    <h1>More about {{page.related}}:</h1>
+    <p>
+      Not sure what kind of info you're looking for? Want some inspiration? Think you've read all our posts? Get all the newest stuff, in one place
+    </p>
+  </li>
+  {% assign related_term = page.related %}
+  {% for post in site.related_posts %}
+    {% if post.related == related_term %}
+        {%include post-base-block.html %}
+      {% else %}
+    {% endif %}
+  {% endfor %}
+</div>
 <div class="related-content" style="background: {{page.color}};">
   <div class="container">
     <div class="related-tags">
@@ -75,6 +74,11 @@ layout: default
       </div>
     </div>
   </div>
+</div>
+<div class="posts">
+  <li class="related">
+    Related posts:
+  </li>
 </div>
 <div class="back-to" style="background: {{page.color}};">
   <div class="container">
