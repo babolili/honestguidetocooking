@@ -44,12 +44,12 @@
 		}
 	}
 }
+
 .home-quick-about {
-	padding: $padding-xl;
-	background-color: $light-pink;
 	.intro-text {
 		@include col(8,2,$tablet,10,1);
 		@extend %basic-padding;
+		padding-top: $padding-l;
 	}
 }
 

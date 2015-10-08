@@ -48,6 +48,44 @@
 		}
 	}
 }
+%chapter-colors {
+	&.equipment {
+		background-color: $equipment;
+		.hover-overlay {
+			background-color: $equipment;
+		}
+	}
+	&.ingredients {
+		background-color: $ingredients;
+		.hover-overlay {
+			background-color: $ingredients;
+		}
+	}
+	&.techniques {
+		background-color: $techniques;
+		.hover-overlay {
+			background-color: $techniques;
+		}
+	}
+	&.tips-tricks {
+		background-color: $tips-tricks;
+		.hover-overlay {
+			background-color: $tips-tricks;
+		}
+	}
+	&.save-dinner {
+		background-color: $save-dinner;
+		.hover-overlay {
+			background-color: $save-dinner;
+		}
+	}
+	&.general {
+		background-color: $general;
+		.hover-overlay {
+			background-color: $general;
+		}
+	}
+}
 
 
 .chapters {
@@ -129,6 +167,18 @@
 		.center-blocks {
 			> div {
 				vertical-align: top;
+			}
+		}
+	}
+	&.intro {
+		background-color: #FFD264;
+		padding-bottom: $padding-l;
+		.center-blocks {
+			.image-block {
+				width: 30%;
+			}
+			.description-block {
+				width: 69%;
 			}
 		}
 	}
