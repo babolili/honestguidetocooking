@@ -6,6 +6,7 @@ $main-color: #666666;
 $text-body-color: rgba(0,0,0,.7);
 $black: #554541;
 $light-grey: #F8F8F8;
+$grey: #e1e1e1;
 
 $hg-pink: #F18E8A;
 $magenta: #FF79A2;
@@ -24,7 +25,7 @@ $salmon: #FBA18A;
 $equipment: #FBA18A;
 $ingredients: #F87959;
 $techniques: #B1CF99;
-$tips-tricks: #C3DBB1;
+$tips-tricks: lighten($hg-pink, 5%);
 $save-dinner: #DF8699;
 $general: #7FA9AB;
 

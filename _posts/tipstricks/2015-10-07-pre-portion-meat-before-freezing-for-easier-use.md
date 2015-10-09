@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: tipstricks
 title: "Pre-portion meat before freezing for easier use" 
 type: "Tips and Tricks"
 category: tip

@@ -136,9 +136,10 @@
 	@include clearfix;
 	@extend %chapter-gradients;
 	@extend %white-fonts;
+	@extend %basic-padding;
 	padding: $padding-xl*2 0;
 	.center-blocks {
-		@include col(10,1,$tablet,12,0);
+		@include outer-container;
 		> div {
 			display: inline-block;
 			vertical-align: bottom;
@@ -161,6 +162,23 @@
 			p {
 				padding-bottom: $padding-base;
 			}
+			.faq {
+				p {
+					font-size: rem(16px);
+				}
+			}
+		}
+	}
+	&.ebook {
+		background-color: $hg-pink;
+		padding-bottom: $padding-base;
+		.center-blocks {
+			> div {
+				vertical-align: top;
+			}
+			.description-block {
+				padding-bottom: 0px;
+			}
 		}
 	}
 	&.techniques {
@@ -174,6 +192,9 @@
 		background-color: #FFD264;
 		padding-bottom: $padding-l;
 		.center-blocks {
+			> div {
+				vertical-align: top;
+			}
 			.image-block {
 				width: 30%;
 			}
@@ -182,17 +203,50 @@
 			}
 		}
 	}
+	ul {
+		li {
+			padding-left: $padding-xl;
+			position: relative;
+			color: white;
+			padding-top: $padding-xs;
+			padding-bottom: $padding-s;
+			&:before {
+				content: $fa-var-cutlery;
+				font-family: $icon-font;
+				position: absolute;
+				left: 0px;
+				top: $padding-s;
+				color: white;
+			}
+		}
+		li + li {
+			border-top: 1px dotted rgba($hg-pink, 0.5);
+		}
+		&.not { 
+			border-top: 1px dashed rgba(white,0.5);
+			border-bottom: 1px dashed rgba(white,0.5);
+			padding: $padding-base 0;
+			margin: $padding-base 0;
+			li:before {
+				content: $fa-var-ban;
+			}
+		}
+	}
 	@include media($tablet) {
 		padding: $padding-l 0; 
 		.center-blocks {
 			.description-block, .image-block {
-				width: 100%;
+				width: 100% !important;
 				display: block;
 				padding-bottom: $padding-base;
+				text-align: left;
 				img {
-					max-height: 400px;
+					max-height: 250px;
 				}
 			}
 		}
 	}
+}
+.comments {
+	@include col(6,6,$tablet,12,0);
 }

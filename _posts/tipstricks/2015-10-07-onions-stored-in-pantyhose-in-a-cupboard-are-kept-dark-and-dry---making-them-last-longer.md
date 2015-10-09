@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: tipstricks
 title: "Onions stored in pantyhose in a cupboard are kept dark and dry - making them last longer" 
 type: "Tips and Tricks"
 category: tip

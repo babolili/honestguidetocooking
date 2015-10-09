@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: tipstricks
 title: "Celery wrapped in foil and stored in the fridge will keep well" 
 type: "Tips and Tricks"
 category: tip

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: tipstricks
 title: "Herbs treated like flowers last longer"
 type: "Tips & Tricks"
 category: tip

@@ -1,0 +1,13 @@
+.tip-container {
+	@include col(8,2,$tablet,12,0);
+	padding: $padding-xl;
+	text-align: center;
+	img {
+		max-height: 400px;
+	}
+}
+.back-to.tips {
+	@include clearfix;
+	clear: both;
+	background-color: lighten($hg-pink,5%);
+}

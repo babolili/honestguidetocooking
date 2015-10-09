@@ -70,3 +70,9 @@
 .chapters .home-container {
 	@include col(6,0,$tablet,12,0);			
 }
+.buy-pdf-button {
+	@include button(white, $magenta, $magenta, white);
+	margin-bottom: $padding-xl;
+	display: inline-block;
+	cursor: pointer;
+}

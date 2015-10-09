@@ -1,0 +1,23 @@
+---
+layout: default
+---
+<div class="container">
+	<div class="tip-container">
+		<div class="post">  
+		  <h3 class="tip-type">{{ page.tiptype}} Tip</h3>
+		  {% assign page_image = page.image %}
+		  {{ if page.}}
+		  {% if page_image == %} 
+		    &nbsp; 
+		  {% else %}
+		    {{ page_image | image }}
+		  {% endif %}
+		  <h3 class="post-title wordwrap">{{ page.title }}</h3>
+		</div>
+	</div>
+	<div class="back-to tips">
+	  <div class="container">
+	    <a href="/chapters/ingredients"><i class="fa fa-angle-left"></i> Back to Ingredients</a>
+	  </div>
+	</div>
+</div>
