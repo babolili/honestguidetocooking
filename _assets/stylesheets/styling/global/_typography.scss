@@ -104,7 +104,7 @@ h4 {
 }
 
 h5 {
-  @include font($header,rem(50px),$bold,$black);
+  @include font($header,rem(24px),$bold,$black);
 }
 
 p {

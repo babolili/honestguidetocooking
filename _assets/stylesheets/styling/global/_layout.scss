@@ -25,6 +25,11 @@ body {
     padding-top: 0px;
   }
 }
+.row {
+  display: block;
+  clear: both;
+  @include clearfix;
+}
 .half {
   @include span-columns(6);
 }
