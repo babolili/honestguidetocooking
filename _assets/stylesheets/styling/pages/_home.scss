@@ -72,7 +72,17 @@
 }
 .buy-pdf-button {
 	@include button(white, $magenta, $magenta, white);
-	margin-bottom: $padding-xl;
 	display: inline-block;
 	cursor: pointer;
+}
+.button-row {
+	display: block;
+	@include clearfix;
+	clear: both;
+	margin-bottom: $padding-xl;
+	> a {
+		display: inline-block;
+		vertical-align: middle;
+		cursor: pointer;
+	}
 }
