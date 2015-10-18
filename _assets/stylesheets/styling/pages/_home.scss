@@ -75,6 +75,11 @@
 	display: inline-block;
 	cursor: pointer;
 }
+.buy-block {
+	@include media($tablet) {
+		display: none;
+	}
+}
 .button-row {
 	display: block;
 	@include clearfix;
@@ -84,5 +89,6 @@
 		display: inline-block;
 		vertical-align: middle;
 		cursor: pointer;
+		margin-bottom: $padding-s;
 	}
 }
