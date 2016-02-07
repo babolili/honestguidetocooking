@@ -1,7 +1,16 @@
 # Rquire jekyll to compile the site.
 require "jekyll"
 
+# Heroku publishing 
+
+namespace :assets do
+  task :precompile do
+    puts `bundle exec jekyll build`
+  end
+end
+
 # Github pages publishing.
+
 namespace :blog do
   #
   # Because we are using 3rd party plugins for jekyll to manage the asset pipeline
