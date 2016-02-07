@@ -6,7 +6,7 @@ versions = JSON.parse(open('https://pages.github.com/versions.json').read)
 
 gem 'jekyll'
 gem 'kramdown'
-gem 'rack-jekyll'
+gem 'rack-jekyll', :git => 'https://github.com/adaoraul/rack-jekyll.git'
 gem 'rake'
 gem 'puma'
 gem 'sprockets-sass'
