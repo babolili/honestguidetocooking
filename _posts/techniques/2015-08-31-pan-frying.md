@@ -39,3 +39,4 @@ steps:
   image: techniques/panfry/step6.png
   content: "Pan-fried dishes are usually served as accompaniment with a starchy component, like potato, rice and pasta, but you can fry starches in a pan too.  Starches are usually pre-cooked before frying, or simmered with liquid after."
 ---
+
